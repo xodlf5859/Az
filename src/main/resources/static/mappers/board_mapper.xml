@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.az.board.dao.BoardMapper">
+	
+	<resultMap id="board" type="com.az.board.vo.BoardVO">
+		<result property="boardIdx" column="board_idx"/>
+		<result property="boardTitle" column="board_title"/>
+		<result property="boardContent" column="board_content"/>
+		<result property="boardWriter" column="board_writer"/>
+		<result property="boardRegdate" column="board_regdate"/>
+		<result property="boardCount" column="board_count"/>
+		<result property="boardType" column="board_type"/>
+	</resultMap>
+	
+<!-- 	게시글 검색 -->
+	<select id="selectBoard" parameterType="com.az.board.vo.BoardVO" resultMap="board">
+		select
+			 *
+		from board
+<!-- 		where type =  -->
+	</select>
+	
+	<!--회원등록  -->
+	<insert id="insertBoard" parameterType="com.az.board.vo.BoardVO">
+		insert into member (mem_name,mem_id,mem_pw,mem_email,mem_phone)
+		values(#{memName},#{memId},#{memPw},#{memEmail},#{memPhone})
+	</insert>
+	
+<!--   <update id="updateMember"  parameterType="com.az.board.vo.BoardVO" > -->
+<!--   </update> -->
+
+
+<!--   <update id="deleteMember"  parameterType="com.az.board.vo.BoardVO" > -->
+<!--   </update> -->
+
+
+  
+  
+</mapper>
