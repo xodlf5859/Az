@@ -409,7 +409,7 @@
         <h2>홈페이지 준비중</h2>
         <h3>입니다!</h3>
       </div>
-      <div>(주)아트엔에서 보다 나은 서비스를 위해<br>홈페이지를 새롭게 개편합니다!</div>
+      <div>(주)아트젠에서 보다 나은 서비스를 위해<br>홈페이지를 새롭게 개편합니다!</div>
       <div><img src="../img/comingsoon-icon.png" alt=""></div>
       <button class="close">닫기</button>
     </div>
