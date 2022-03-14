@@ -1,0 +1,736 @@
+/* 메인 비주얼 */
+.visual{
+  width: 100%;
+  height: 880px;
+  position: relative;
+  margin-top: 90px;
+}
+.visual .main-top{
+  width: 100%;
+  padding: 0 278px;
+  position: relative;
+  z-index: 2;
+}
+.main-top .main-title{
+  font: normal normal bold 5rem/7rem Noto Sans KR;
+  margin-bottom: 50px;
+}
+.main-top .sub-title{
+  font: normal normal bold 1.5rem/2.1rem Noto Sans KR;
+  margin: 20px 0 50px 0;
+}
+/* 메인 슬라이더  */
+.main-slider{
+  width: 100%;
+  height: 600px;
+  padding: 0 140px;
+  position: absolute;
+  bottom: 280px;
+  position: relative;
+}
+.main-slider .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.main-slider .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.main-slider .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main-slider .swiper-button-next, .swiper-button-prev{
+  color: #137989 !important;
+}
+.main-slider .swiper-pagination-bullet{
+  background: #D1B28A 0% 0% no-repeat padding-box;
+}
+.main-slider .swiper-pagination-bullet-active{
+  background: #D1B28A 0% 0% no-repeat padding-box;
+  width: 10px;
+  height: 10px;
+}
+
+/* 회사 소개 섹션 */
+.section-title{
+  text-align: center;
+  font: normal normal bold 32px/46px Noto Sans KR;
+  margin-bottom: 32px;
+}
+.about{
+  position: relative;
+}
+.about .about-wrap{
+  width: 100%;
+  padding: 0 14.4vw;
+}
+.about-background{
+  width: 100%;
+  height: 500px;
+  background: #EFEFEF 0% 0% no-repeat padding-box;
+  position: absolute;
+  top: 380px;
+}
+.about .swiper {
+  width: 100%;
+  height: 100%;
+}
+/* .about .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+} */
+.about .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about .introduce{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+.about .intro-img{
+  width: 456px;
+  height: 447px;
+  position: relative;
+}
+.about .intro-img .view-more{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+.about .intro-img .view-more p{
+  font: normal normal medium 16px/24px Noto Sans KR;
+  color: #fff;
+}
+.about .intro-img .view-more img{
+  width: 16px;
+  height: 16px;
+}
+.about .intro-img a .company-img{
+  /* width: 456px;
+  height: 447px; */
+  width: 100%;
+  height: 100%;
+  background: transparent url('../img/company@2x.png') 0% 0% no-repeat padding-box;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+}
+.about .intro-img a .fair-img{
+  /* width: 456px;
+  height: 447px; */
+  width: 100%;
+  height: 100%;
+  background: transparent url('../img/fair@2x.png') 0% 0% no-repeat padding-box;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+}
+.about .intro-img a .ask-img{
+  /* width: 456px;
+  height: 447px; */
+  width: 100%;
+  height: 100%;
+  background: transparent url('../img/ask@2x.png') 0% 0% no-repeat padding-box;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+}
+.about .intro-img a>div:last-child{
+  /* width: 456px;
+  height: 447px; */
+  width: 100%;
+  height: 100%;
+  background: rgba(19, 121, 137, 0.8);
+  border-radius: 237px 238px 0px 238px;
+  position: absolute;
+  top: 0;
+  position: relative;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.about .intro-img a>div:last-child:hover{
+  opacity: 1;
+}
+.about .intro-txt{
+  width: 100%;
+  padding-left: 100px;
+}
+.about .intro-txt .company-icon{
+  width: 66px;
+  height: 62px;
+  background: transparent url('../img/company-icon.svg') 0% 0% no-repeat padding-box;
+  margin: 50px 0 30px 0;
+}
+.about .intro-txt .fair-icon{
+  width: 66px;
+  height: 62px;
+  background: transparent url('../img/fair-icon.svg') 0% 0% no-repeat padding-box;
+  margin: 50px 0 30px 0;
+}
+.about .intro-txt .ask-icon{
+  width: 66px;
+  height: 62px;
+  background: transparent url('../img/ask-icon.svg') 0% 0% no-repeat padding-box;
+  margin: 50px 0 30px 0;
+}
+.about .intro-txt .intro-title{
+text-align: left;
+font: normal normal normal 24px/35px Noto Sans KR;
+margin-bottom: 10px;
+}
+.about .intro-txt span{
+  font: normal normal normal 16px/24px Noto Sans KR;
+}
+.plus-viewmore{
+  width: 24px;
+  height: 24px;
+  margin: 60px auto;
+  margin-bottom: 60px;
+  display: none;
+}
+.plus-viewmore img{
+  width: 24px;
+  height: 24px;
+}
+.about .swiper-pagination-bullet-active{
+  background: #137989 0% 0% no-repeat padding-box;
+}
+/* 주관이력 부분 */
+.fair{
+  height: 1400px;
+  margin-top: 80px;
+  background: transparent url('../img/main-background.png') 0% 100% no-repeat padding-box;
+  padding: 160px 228px 0 278px;
+  border-bottom: 1px solid #f8f9fb;
+}
+.fair .tab-wrap{
+  display: flex;
+  justify-content: flex-start;
+}
+.fair .fair-history{
+  width: 100%;
+  padding: 60px 0;
+  /* display: none; */
+  /* background-color: aquamarine; */
+}
+.fair .dot{
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: #d1d1d1 0% 0% no-repeat padding-box;
+}
+.fair .fair-title{
+  margin-right: 60px;
+}
+.fair .fair-title input + label{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.fair .fair-title input:checked + label div:first-child{
+  background: #137989 0% 0% no-repeat padding-box;
+
+}
+.fair .fair-title input:checked + label div:last-child{
+  color: #137989;
+}
+.fair .fair-title label div:last-child{
+  color: #D1D1D1;
+  font-size: 52px;
+}
+.fair .fair-overview{
+  font: normal normal normal 16px/24px Noto Sans KR;
+  margin-bottom: 60px;
+}
+
+/* 주관이력 슬라이드 부분 */
+.apt-wrap{
+  margin-top: 120px;
+}
+.apt-wrap .history-slider{
+  width: 100%;
+  height: 650px;
+}
+.apt-wrap .history-slider .fair-img{
+  /* width: 60%;
+  height: 50%; */
+  width: 900px;
+  height: 528px;
+  /* background-color: chartreuse; */
+  position: relative;
+}
+.apt-wrap .history-slider .fair-img>div:nth-child(1){
+  width: 900px;
+  height: 528px;
+  position: absolute;
+  top: 0;
+  right: 60px;
+}
+.apt-wrap .history-slider .fair-img img{
+  width: 900px;
+  height: 528px;
+}
+.apt-wrap .history-slider .fair-img>div:nth-child(2){
+  width: 241px;
+  height: 246px;
+  border-radius: 430px 430px 0px 430px;
+  background: #137989;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: -120px;
+  right: 0px;
+}
+.apt-wrap .history-slider .fair-img>div:nth-child(2) h2{
+  font-size: 6rem;
+  letter-spacing: 0px;
+  color: #D1B28A;
+  margin-left: -70px;
+}
+.apt-wrap .history-slider .swiper-slide{
+  display: flex;
+  justify-content: space-between;
+}
+.apt-wrap .history-slider .swiper-slide>div:first-child{
+  width: 40%;
+}
+.apt-wrap .swiper-pagination-bullet-active{
+  background: #137989 0% 0% no-repeat padding-box;
+}
+.apt-wrap .apt-name{
+  font: normal normal medium 36px/48px Noto Sans KR;
+  letter-spacing: 0px;
+  color: #137989;
+  font-size: 2rem;
+  margin-top: 60px;
+}
+.apt-wrap .apt-info{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font: normal normal medium 18px/48px Noto Sans KR;
+  margin: 10px 0;
+}
+.apt-wrap .apt-info div{
+  font-size: 18px;
+}
+.apt-wrap .apt-info .green-stick{
+  width: 2px;
+  height: 14px;
+  background-color: #137989;
+  border-radius: 1px;
+  margin: 0 16px;
+}
+.apt-wrap .apt-overview{
+  width: 20vw;
+  font-size: 1rem/2rem;
+  margin: 30px 0;
+}
+.apt-wrap .view-fair-btn{
+  margin: 60px 0;
+}
+.apt-wrap .view-fair-btn button{
+  width: 190px;
+  height: 60px;
+  background: #137989 0% 0% no-repeat padding-box;
+border-radius: 398px 398px 0px 398px;
+font: normal normal medium 18px/18px Noto Sans KR;
+letter-spacing: 0px;
+color: #FFFFFF;
+font-size: 1.125rem;
+cursor: pointer;
+}
+/* 협력사 소개 부분 */
+.fair .cooperative{
+  width: 100%;
+  padding: 60px 0;
+  display: none;
+  /* background-color: aquamarine; */
+}
+.coo-logo{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* flex-flow: row wrap; */
+}
+.coo-logo>div{
+  width: 20vw;
+  height: 10vw;
+  border: 2px solid #dbdbdb;
+  margin-top: 60px;
+  padding: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+.coo-logo>div img{
+  width: 100%;
+}
+/* 뉴스부분 */
+.news{
+  margin-top: 160px;
+}
+.news .mySwiper-04{
+  padding: 0 278px;
+}
+.news .mySwiper-04 .swiper-slide{
+  width: 380px;
+  height: 438px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.news .mySwiper-04{
+  padding: 0 278px;
+}
+.news .news-background{
+  width: 100%;
+  height: 450px;
+  background: #F6F0E8 0% 0% no-repeat padding-box;
+position: relative;
+top: -220px;
+/* margin-bottom: 150px; */
+}
+.news .news-background .viewmore{
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.news .mySwiper-04 .swiper-slide .news-img{
+  width: 100%;
+  height: 264px;
+  overflow: hidden;
+  background-color: #137989;
+ }
+.news .mySwiper-04 .swiper-slide:nth-child(1) .news-img>div{
+ width: 100%;
+ height: 264px;
+ background: transparent url('../img/news-01@2x.jpg') 0% 100% no-repeat padding-box;
+ background-size: cover;
+ transition: all 0.3s;
+}
+.news .mySwiper-04 .swiper-slide:nth-child(2) .news-img>div{
+  width: 100%;
+  height: 264px;
+  background: transparent url('../img/news-02@2x.jpg') 0% 100% no-repeat padding-box;
+  background-size: cover;
+  transition: all 0.3s;
+ }
+ .news .mySwiper-04 .swiper-slide:nth-child(3) .news-img>div{
+  width: 100%;
+  height: 264px;
+  background: transparent url('../img/news-03@2x.jpg') 0% 100% no-repeat padding-box;
+  background-size: cover;
+  transition: all 0.3s;
+ }
+.news .mySwiper-04 .swiper-slide .news-img>div:hover{
+  transform: scale(1.2);
+  opacity: 0.5;
+ }
+.news .news-contents{
+  height: 173px;
+  padding: 30px 20px 36px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.news .news-contents .news-title{
+  width: 100%;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+.news .news-contents .news-title a{
+  width: 100%;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+.news .swiper-pagination-bullet-active{
+  background: #137989 0% 0% no-repeat padding-box;
+}
+@media (max-width: 960px){
+  .plus-viewmore{
+    display: block;
+  }
+  /* 메인 비주얼 */
+.visual{
+  width: 100%;
+  height: 780px;
+  position: relative;
+  margin-top: 90px;
+}
+.visual .main-top{
+    width: 100%;
+    padding: 0 32px;
+    top: 0px;
+  }
+.visual .main-top .main-title{
+  font: normal normal bold 2.5rem/3.5rem Noto Sans KR;
+  }
+  /* 메인 슬라이더  */
+.main-slider{
+  width: 100%;
+  height: 600px;
+  padding: 0px;
+  position: absolute;
+  bottom: 230px;
+  position: relative;
+}
+
+.section-title{
+  text-align: center;
+  font: normal normal bold 22px/32px Noto Sans KR;
+  margin-bottom: 32px;
+}
+.about .about-wrap{
+  width: 100%;
+  padding: 0 32px;
+}
+.about .intro-img{
+  width: 325px;
+  height: 319px;
+}
+.about .intro-txt{
+  padding-left: 32px;
+}
+.about .intro-txt .company-icon{
+  margin: 20px 0 30px 0;
+}
+.about .intro-txt .fair-icon{
+  margin: 20px 0 30px 0;
+}
+.about .intro-txt .ask-icon{
+  margin: 20px 0 30px 0;
+}
+.about-background{
+  width: 100%;
+  height: 500px;
+  background: #EFEFEF 0% 0% no-repeat padding-box;
+  position: absolute;
+  top: 280px;
+}
+.fair{
+  height: auto;
+  margin-top: 30px;
+  padding: 100px 32px;
+  background: none;
+}
+.fair .tab-wrap{
+  display: flex;
+  justify-content: space-between;
+}
+.fair .fair-title{
+  margin-right: 10px;
+}
+.fair .fair-title label div:last-child{
+  font-size: 32px;
+}
+.fair .fair-overview{
+  font: normal normal normal 14px/21px Noto Sans KR;
+  margin-bottom: 60px;
+}
+
+/* 주관이력 슬라이드 */
+.apt-wrap .history-slider .swiper-slide{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.apt-wrap .history-slider .swiper-slide>div:first-child{
+  width: 100%;
+}
+.apt-wrap .apt-overview{
+  width: 100%;
+  font-size: 14px;
+  margin: 30px 0;
+}
+.apt-wrap .swiper-slide .view-fair-btn{
+  display: none;
+}
+/* 주관이력 슬라이드 부분 */
+.apt-wrap{
+  margin-top: 0px;
+}
+.apt-wrap .history-slider{
+  width: 100%;
+  height: 450px;
+}
+.apt-wrap .history-slider .fair-img{
+  width: 100%;
+  position: relative;
+}
+.apt-wrap .history-slider .fair-img>div:nth-child(1){
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.apt-wrap .history-slider .fair-img img{
+  width: 90vw;
+  height: auto;
+}
+.apt-wrap .history-slider .fair-img>div:nth-child(2){
+  width: 85px;
+  height: 87px;
+  border-radius: 430px 430px 0px 430px;
+  background: #137989;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+.apt-wrap .history-slider .fair-img>div:nth-child(2) h2{
+  font-size: 2rem;
+  letter-spacing: 0px;
+  color: #D1B28A;
+  margin-left: -30px;
+}
+.apt-wrap .history-slider .swiper-slide{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.apt-wrap .swiper-pagination-bullet-active{
+  background: #137989 0% 0% no-repeat padding-box;
+}
+.apt-wrap .apt-name{
+  font: normal normal medium 36px/48px Noto Sans KR;
+  letter-spacing: 0px;
+  color: #137989;
+  font-size: 1.5rem;
+  margin-top: 60px;
+}
+.apt-wrap .apt-info{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font: normal normal medium 18px/48px Noto Sans KR;
+  margin: 10px 0;
+}
+.apt-wrap .apt-info div{
+  font-size: 14px;
+}
+.cooperative .coo-logo>div{
+  width: 26vw;
+  height: 16vw;
+  border: 2px solid #dbdbdb;
+  margin-top: 30px;
+  padding: 10px;
+}
+.news{
+  margin-top: 60px;
+}
+.news .mySwiper-04{
+  padding: 0 32px;
+}
+.news .news-contents .news-title{
+  width: 100%;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+}
+@media (max-width: 380px){
+.visual .main-top .main-title{
+    font: normal normal bold 2.25rem/4rem Noto Sans KR;
+  }
+  
+}
+@media (max-width: 280px){
+  .visual{
+    width: 100%;
+    height: 700px;
+    position: relative;
+    margin-top: 90px;
+  }
+.visual .main-top .main-title{
+    font: normal normal bold 1.625rem/2.5rem Noto Sans KR;
+  }
+  .main-top .sub-title{
+    font: normal normal bold 1.125rem/2.1rem Noto Sans KR;
+    margin: 20px 0 50px 0;
+  }
+  .section-title{
+    text-align: center;
+    font: normal normal bold 16px/32px Noto Sans KR;
+    margin-bottom: 32px;
+  }
+  .about .about-wrap{
+    width: 100%;
+    padding: 0 0px;
+  }
+  .about .intro-img{
+    width: 280px;
+    height: 280px;
+  }
+  .about .intro-txt .company-icon{
+    margin: 0px 0 30px 0;
+  }
+  .about .intro-txt .fair-icon{
+    margin: 0px 0 30px 0;
+  }
+  .about .intro-txt .ask-icon{
+    margin: 0px 0 30px 0;
+  }
+  .fair{
+    height: 1400px;
+    margin-top: 30px;
+    padding: 100px 16px 0 16px;
+  }
+  .fair .fair-title label div:last-child{
+    font-size: 1.5rem;
+  }
+  .apt-wrap .apt-name{
+    font-size: 1.25rem;
+  }
+}

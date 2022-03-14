@@ -1,0 +1,235 @@
+.header{
+  height: 100px;
+  padding: 0 140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #EEEEEE;
+}
+.header .header-logo{
+  width: 82px;
+  height: 58px;
+  background: transparent url('../img/logo-black.svg') 0% 0% no-repeat padding-box;
+  background-size: cover;
+}
+.header .header-menu{
+  display: flex;
+  justify-content: flex-end;
+}
+.header .header-menu .gnb{
+  width: 172px;
+  text-align: center;
+  /* margin-top: 50px; */
+}
+.header .mainmenu{
+  position: relative;
+  font: normal normal normal 18px/32px Noto Sans KR;
+  color: #1A1311;
+}
+.header .mainmenu:hover ul{
+  opacity: 1;
+}
+.header .submenu{
+  width: 100%;
+  margin-top: 10px;
+  padding: 16px 0;
+  position: absolute;
+  top: 30px;
+  background-color: #fff;
+  border: 1px solid #F3F3F3;
+  opacity: 0;
+  transition: 0.5s;
+}
+.header .submenu li{
+  margin-bottom: 12px;
+}
+.header .submenu li:last-child{
+  margin-bottom: 0px;
+}
+.header .submenu li a{
+  transition: all 0.2s;
+}
+.header .submenu li a:hover{
+  color: #137989;
+}
+.header .m-menu{
+  width: 56px;
+  height: 56px;
+  display: none;
+}
+.header .m-menu-btn{
+  width: 56px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  /* display: flex; */
+  display: none;
+}
+.header .m-menu-close{
+  width: 56px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.header .m-menu-btn button{
+  width: 40px;
+  height: 40px;
+  background: transparent url('../img/m-menu-icon-bk.svg') 0% 0% no-repeat padding-box;
+  background-size: contain;
+  border: none;
+}
+/* 모바일 메뉴 */
+/* .m-menu{
+  display: none;
+} */
+.m-menu .m-menu-open{
+  display: none;
+}
+
+
+
+/* footer */
+.footer{
+  width: 100%;
+  height: 260px;
+  padding: 40px 278px;
+  background: #EFEFEF 0% 0% no-repeat padding-box;
+}
+.footer .footer-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+}
+.footer .footer-top .logo{
+  width: 82px;
+  height: 58px;
+  background: transparent url('../img/logo-black.svg') 0% 0% no-repeat padding-box;
+}
+.footer .footer-top a{
+  font: normal normal normal 11px/16px Noto Sans KR;
+  letter-spacing: 0px;
+  color: #666666;
+  margin-left: 40px;
+}
+.footer .footer-top a:nth-child(1){
+  margin-left: 0px;
+}
+.footer .footer-bottom {
+  border-top: 1px solid #ccc;
+  padding: 20px 0 0 0;
+}
+.footer .footer-bottom div{
+  font: normal normal normal 11px/16px Noto Sans KR;
+  letter-spacing: 0px;
+  color: #666666;
+  margin-bottom: 6px;
+}
+.footer .footer-bottom>div:last-child{
+  margin-top: 14px;
+}
+@media (max-width: 960px){
+  .header{
+    padding: 0 32px;
+    border-bottom: none;
+  }
+  .header .m-menu{
+    display: block;
+  }
+  .header .m-menu-btn{
+    display: flex;
+  }
+  .header .header-menu{
+    display: none;
+  }
+  .m-menu{
+    display: block;
+  }
+  .m-menu .m-menu-open{
+    width: 100vw;
+    height: 100vh;
+    background-color: #137989;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    display: none;
+    z-index: 9;
+  }
+  .m-menu .m-menu-open .m-back{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.7;
+  }
+  .m-menu-open .header .header-logo{
+    width: 82px;
+    height: 58px;
+    background: transparent url('../img/logo-wh.svg') 0% 0% no-repeat padding-box;
+    background-size: cover;
+  }
+  .m-menu-open .header .m-menu-close button{
+    width: 40px;
+    height: 40px;
+    background: transparent url('../img/m-menu-icon-close.svg') 0% 0% no-repeat padding-box;
+    background-size: contain;
+    border: none;
+  }
+
+  .m-menu .m-gnb{
+    margin-top: 30px;
+    padding: 0 52px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* 아코디언 메뉴 */
+.accordion {
+  color: #fff;
+  cursor: pointer;
+  padding: 18px 0;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  background-color: inherit;
+  font-size: 24px;
+}
+.active, .accordion:hover {
+  color: #eee;
+}
+.panel{
+  padding: 0 30px;
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  color: #EEEEEE;
+}
+.panel>div{
+  margin-bottom: 10px;
+}
+.panel a{
+  font-size: 20px;
+}
+.footer{
+  width: 100%;
+  height: 260px;
+  padding: 40px 32px;
+}
+.footer .footer-top{
+  margin-bottom: 20px;
+}
+.footer .footer-top a{
+  margin-left: 20px;
+}
+}
+@media (max-width: 280px){
+.footer{
+  width: 100%;
+  height: 260px;
+  padding: 40px 16px;
+}
+}
