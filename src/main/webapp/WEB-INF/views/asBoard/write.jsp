@@ -10,36 +10,56 @@
 <h3>글쓰기</h3>
 
 <div>
-	<form action="/writeAS" method="POST">
+	<form action="/asBoard/writeAS" method="POST">
 		<table>
+<!-- 			<tr> -->
+<!-- 				<td>고객번호</td> -->
+<!-- 				<td><input type="text" name=asIdx></td> -->
+<!-- 			</tr> -->
 			<tr>
-				<td>1</td>
-				<td><input type="text" name="test1"></td>
+				<td>고객이름</td>
+				<td><input type="text" name="asName"></td>
 			</tr>
 			<tr>
-				<td>2</td>
-				<td><input type="text" name="test2"></td>
+				<td>비밀번호</td>
+				<td><input type="text" name="asPw"></td>
 			</tr>
 			<tr>
-				<td>3</td>
-				<td><input type="text" name="test3"></td>
+				<td>아파트명</td>
+				<td><input type="text" name="asApt"></td>
 			</tr>
 			<tr>
-				<td>4</td>
-				<td><input type="text" name="test4"></td>
+				<td>동/호수</td>
+				<td><input type="text" name="asDetail"></td>
 			</tr>
 			<tr>
-				<td>5</td>
-				<td><input type="text" name="test5"></td>
+				<td>고객연락처</td>
+				<td><input type="text" name="asPhone"></td>
 			</tr>
 			<tr>
-				<td>6</td>
-				<td><input type="text" name="test6"></td>
+				<td>구매품목</td>
+				<td><input type="text" name="asItem"></td>
+			</tr>
+			<tr>
+				<td>판매업체명</td>
+				<td><input type="text" name="asStore"></td>
+			</tr>
+			<tr>
+				<td>접수일</td>
+				<td><input type="text" name="asDate"></td>
+			</tr>
+			<tr>
+				<td>제목</td>
+				<td><input type="text" name="asTitle"></td>
+			</tr>
+			<tr>
+				<td>내용</td>
+				<td><input type="text" name="asContent"></td>
 			</tr>
 		</table>
 		<input type="submit" value="작성">
 	</form>
-		<button onclick="location.href='/as'">취소</button>
+		<button onclick="location.href='/asBoard/as'">취소</button>
 </div>
 </body>
 </html>

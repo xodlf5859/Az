@@ -28,19 +28,19 @@ function write() {
 			<td>조회수</td>
 			<td>답변여부</td>
 		</tr>
-		<c:forEach var="list" items="d" begin="0" end="5">
+		<c:forEach var="var" items="${asList}" varStatus="status">
 			<tr>
-				<td>1</td>
-				<td><a href="#">제목</a>2</td>
-				<td>3</td>
-				<td>4</td>
-				<td>5</td>
-				<td>6</td>
+				<td>${status.count}</td>
+				<td><a href="/asBoard/detail/${var.asIdx}">${var.asTitle}</a></td>
+				<td>${var.asDate}</td>
+				<td>${var.asName}</td>
+				<td>아직</td>
+				<td>안정함</td>
 			</tr>
 		</c:forEach>
 		
 	</table>
-	<button type="button" onclick="location.href='/as/write'">글쓰기</button>
+	<button type="button" onclick="location.href='/asBoard/write'">글쓰기</button>
 </div>
 <h3>페이지네이션 언제할래?</h3>
 

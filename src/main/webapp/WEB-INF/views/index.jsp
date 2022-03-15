@@ -49,7 +49,7 @@
           <ul class="submenu">
             <li><a href="">협력업체문의</a></li>
             <li><a href="">입주박람회문의</a></li>
-            <li><a href="">A/S접수</a></li>
+            <li><a href="/asBoard/as">A/S접수</a></li>
           </ul>
         </div>
 
