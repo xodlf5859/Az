@@ -13,7 +13,15 @@
 ${list.boardIdx } ${list.boardTitle }
 </C:forEach>
 
-<script>
+<input type="text" id="boardTitle">
+<input type="text" id="boardContent">
+<input type="text" id="boardWriter" value="1">
+<input type="hidden" id="boardType" value="0" >
+
+<button id="boardButton">버튼</button>
+<button id="boardButton2">버튼2</button>
+
+<script src="../api_js/select.js">
 
 </script>
 </body>

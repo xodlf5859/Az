@@ -14,4 +14,7 @@ public interface BoardMapper {
 	
 	//등록
 	void insertBoard(BoardVO boardVO) throws Exception;
+	
+	//수정
+	void updateBoard(BoardVO boardVO) throws Exception;
 }
