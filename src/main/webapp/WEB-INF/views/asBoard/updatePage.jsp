@@ -9,10 +9,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>as상세내용</h3>
+<h3>수정페이지</h3>
+
+
+<div>
 
 <c:forEach var="var" items="${list}">
-	<form method="POST" name="form">
+	<form action="/asBoard/asUpdate" method="POST">
 	<table>
 		<tr>
 			<td>회원번호</td>
@@ -21,10 +24,6 @@
 		<tr>
 			<td>내용</td>
 			<td><input type="text" name="asName" value="${var.asName}">   </td>
-		</tr>
-		<tr>
-			<td>ㅁㄴㅇㄹ</td>
-			<td><input type="text" name="asPw" value="${var.asPw}">     </td>
 		</tr>
 		<tr>
 			<td>ㅁㄴㅇㄹ</td>
@@ -65,16 +64,13 @@
 		</tr>
 		
 	</table>
-	
-	<input type="submit" value="수정" formaction="/asBoard/asUpdatePage">
-	<input type="submit" value="삭제" formaction="/asBoard/asDelete">
-	
-<!-- 	<button type="submit">수정</button> -->
+	<button type="submit">확인</button>
+	<button type="button">취소</button>
 <%-- 	<button type="button" onclick="location.href='/asBoard/asDelete'" value="${var.asIdx}" name="asIdx">삭제</button> --%>
 	</form>
 </c:forEach>
 
 
-
+</div>
 </body>
 </html>

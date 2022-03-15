@@ -15,6 +15,7 @@
 		<result property="asDate" column="as_date"/>
 		<result property="asTitle" column="as_title"/>
 		<result property="asContent" column="as_content"/>
+		<result property="asStatus" column="as_status"/>
 	</resultMap>
 	
 <!-- 	게시글 검색	//게시판보기 -->
@@ -22,24 +23,60 @@
 		select
 			 *
 		from asboard
+		where as_read = 'Y'
 <!-- 		where type =  -->
 	</select>
 	
 	<insert id="writeAs" parameterType="com.az.asBoard.vo.AsBoardVO">
 		insert into asboard(
 			as_name,as_pw,as_apt,as_detail,as_phone,as_item,
-			as_store,as_date,as_title,as_content
+			as_store,as_title,as_content,as_status,as_read
 		) values (			
 			#{asName},#{asPw},#{asApt},#{asDetail},#{asPhone},#{asItem},
-			#{asStore},#{asDate},#{asTitle},#{asContent}
+			#{asStore},#{asTitle},#{asContent},"N","Y"
 		)
 	</insert>
 	
+<!-- 	상세페이지보기 -->
 	<select id="asBoardDetail" resultMap="asboardVo">
 		select * from asboard
 		where as_idx = #{asIdx}
 	
 	</select>
+	
+<!-- 	수정 -->
+	<update id="asUpdate" parameterType="com.az.asBoard.vo.AsBoardVO">
+		update asboard 
+			set 
+				as_name = #{asName},
+				as_apt = #{asApt},
+				as_detail = #{asDetail},
+				as_phone = #{asPhone},
+				as_item = #{asItem},
+				as_store = #{asStore},
+				as_date = CURRENT_TIMESTAMP,
+				as_title = #{asTitle},
+				as_content = #{asContent}
+			where as_idx = #{asIdx}
+		
+		
+	</update>
+	
+
+<!-- 	질문처리	 -->
+	<update id="asDelete" parameterType="com.az.asBoard.vo.AsBoardVO">
+		update asboard 
+		set as_read = "N"
+		where as_idx = #{asIdx}
+	</update>
+	
+	
+	<update id="asBoardAnswer" parameterType="com.az.asBoard.vo.AsBoardVO">
+		update asboard 
+		set as_status = "Y"
+		where as_idx = #{asIdx}
+	</update>
+	
 	<!--회원등록  -->
 <!-- 	<insert id="insertBoard" parameterType="com.az.asBoard.vo.AsBoardVO"> -->
 <!-- 		insert into member (mem_name,mem_id,mem_pw,mem_email,mem_phone) -->

@@ -17,5 +17,9 @@ public interface AsBoardMapper {
 
 	List<AsBoardVO> asBoardDetail(AsBoardVO asBoardVo);
 
+	void asUpdate(AsBoardVO asboardVo);
+
+	void asBoardAnswer(AsBoardVO asBoardVo);
+
 	
 }
