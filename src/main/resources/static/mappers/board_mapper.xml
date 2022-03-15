@@ -21,14 +21,16 @@
 <!-- 		where type =  -->
 	</select>
 	
-	<!--회원등록  -->
+	<!-- 게시글등록  -->
 	<insert id="insertBoard" parameterType="com.az.board.vo.BoardVO">
-		insert into member (mem_name,mem_id,mem_pw,mem_email,mem_phone)
-		values(#{memName},#{memId},#{memPw},#{memEmail},#{memPhone})
+		insert into board (board_title,board_content,board_writer,board_type)
+		values(#{boardTitle},#{boardContent},#{boardWriter},#{boardType})
 	</insert>
 	
-<!--   <update id="updateMember"  parameterType="com.az.board.vo.BoardVO" > -->
-<!--   </update> -->
+	<!-- 게시글 수정  -->
+	<update id="updateBoard"  parameterType="com.az.board.vo.BoardVO" >
+	update board set board_title = #{boardTitle}, board_content = #{boardContent} where board_idx = #{boardIdx}
+	</update>
 
 
 <!--   <update id="deleteMember"  parameterType="com.az.board.vo.BoardVO" > -->

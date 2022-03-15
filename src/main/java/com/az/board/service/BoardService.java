@@ -9,5 +9,11 @@ public interface BoardService {
 	
 	//게시글 검색
 	List<BoardVO> selectBoard(BoardVO boardVO) throws Exception;
+
+	//등록
+	void insertBoard(BoardVO boardVO) throws Exception;
+
+	//수정
+	void updateBoard(BoardVO boardVO) throws Exception;
 	
 }
