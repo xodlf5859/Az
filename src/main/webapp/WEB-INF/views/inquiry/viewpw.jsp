@@ -1,19 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(주)아트젠</title>
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/header_footer.css">
-    <link rel="stylesheet" href="../css/as-form.css">
+    <link rel="stylesheet" href="../css/cooperator-request-read-password.css">
 </head>
 <body>
+    <!--  입주박람회 글을 클릭했을 때 비밀번호 입력 페이지입니다 -->
   <div class="header">
     <div class="header-logo">
     </div>
@@ -95,82 +95,55 @@
           </div>
       </div>
       <div class="sub-top">
-        <h1 class="sub-top-title">AS 접수센터</h1>
-        <p class="sub-top-title-explain">하자보수 접수 센터입니다. 최대한 빠르게 답변해드리겠습니다.</p>  
+        <h1 class="sub-top-title">입주 박람회 문의</h1>
+        <p class="sub-top-title-explain">입주 박람회에 관한 궁금한 점을 문의하실 수 있습니다.</p>  
         <div class="sub-top-visual">
           <div class="visual-title-wrap">
-            <p class="visual-title">AS 접수센터</p>
-            <p class="visual-explain">아트젠은 고객님과의 약속을 끝까지 책임지겠습니다.</p>
+            <p class="visual-title">입주 박람회 문의</p>
+            <p class="visual-explain">언제나 아트젠을 사랑해 주셔서 감사합니다. 최대한 빠르게 답변해 드릴 수 있도록 노력 하겠습니다.</p>
           </div>
         </div>
       </div> 
       <div class="contents1">
         <div class="sub-contents-title">
           <div class="title-decoration"></div>
-          <p class="sub-title">AS 접수센터</p>
-          <p class="sub-title-explain">하자보수 접수 센터입니다. 최대한 빠르게 답변해드리겠습니다.</p>
+          <p class="sub-title">입주 박람회 문의</p>
+          <p class="sub-title-explain">입주 박람회에 관한 궁금한 점을 문의하실 수 있습니다.</p>
         </div>
-	<form action="/asBoard/writeAS" name="fwite" id="fwrite" method="POST">
-				 <div class="form-write">
+        <div class="secreat-page">
+            <p>비밀글 보기</p>
+            <p>이 글은 비밀글입니다. 비밀번호를 입력해 주세요.</p>
+        </div>
+        <form name="fwite" id="fwrite" action="" method="">
+            <div class="form-write">
                 <div class="form-write-in">
-                    <label><span class="star">*</span>성명</label>
-                    <input type="text" name="asName">
-                </div>
-                <div class="form-write-in">
-                    <label><span class="star">*</span>비밀번호</label>
-                    <input type="password" name="asPw">
-                </div>
-                <div class="form-write-in">
-                  <label><span class="star">*</span>아파트명</label>
-                  <input type="text" name="asApt">
-                </div>
-                <div class="form-write-in">
-                  <label><span class="star">*</span>동/ 호수</label>
-                  <input type="text" name="asDetail">
-                </div>
-                <div class="form-write-in">
-                  <label><span class="star">*</span>고객님 연락처</label>
-                  <input type="text" name="asPhone">
-                </div>
-                <div class="form-write-in">
-                  <label><span class="star">*</span>구매품목</label>
-                  <input type="text" name="asItem">
-                </div>
-                <div class="form-write-in">
-                  <label>판매 업체명</label>
-                  <input type="text" name="asStore">
-                </div>
-                <div class="form-write-in">
-                  <label>접수일</label>
-                  <input type="text" name="asDate">
-                </div>
-                <div class="form-write-in-100">
-                  <label class="title-label"><span class="star">*</span>제목</label>
-                  <input type="text" name="asTitle">
-                </div>
-                <textarea class="form-write-in-100-text" name="asContent"></textarea>
+                    <label for="wr-password"><span class="star">*</span>비밀번호</label>
+                    <input type="password" id="wr-password">
+                </div>                                          
             </div>
             <div class="form-button">
-              <a href="/asBoard/as" class="btn-cancle">취소</a>
-              <button type="submit" id="btn_submit" class="btn-submit">작성완료</button>
+              <button id="btn_cancel" class="btn_cancel">확인</button>
+                <a href="#" class="btn-cancle">뒤로가기</a>
             </div>
         </form>
-    </div>
-   <div class="footer">
-  <div class="footer-top">
-    <div class="logo"></div>
-    <div>
-      <a href="">개인정보처리방침</a>
-      <a href="">이용약관</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div>
-      <div>(34161)  대전광역시 유성구 복용북로 33번길 1  TEL : 042-825-6490</div>
-      <div>대표 이도엽  사업자등록번호 193-88-01901</div>
-    </div>
-    <div>Copyright ⓒ 2022 ARTZEN All Rights Reserved.</div>
-  </div>
-</div>
+      </div>
+  <div class="footer">
+        <div class="footer-top">
+          <div class="logo"></div>
+          <div>
+            <a href="">개인정보처리방침</a>
+            <a href="">이용약관</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>
+            <div>(34161)  대전광역시 유성구 복용북로 33번길 1  TEL : 042-825-6490</div>
+            <div>대표 이도엽  사업자등록번호 193-88-01901</div>
+          </div>
+          <div>Copyright ⓒ 2022 ARTZEN All Rights Reserved.</div>
+        </div>
+      </div>
 </body>
 </html>
+
+

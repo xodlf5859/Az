@@ -94,6 +94,17 @@ input:focus {
 .form-write > .form-write-in-100 {
     width: 100%;
 }
+.form-write  .form-write-in-100-text {
+    width: 100%;
+    height: 452px;
+    border: 1px solid #BABABA;
+    margin-top: 30px;
+    padding: 15px;
+    overflow-y:scroll;
+}
+.form-write  .form-write-in-100-text:focus {
+    outline: none;
+}
 .form-write  label{
     display: block;
     width: 100%;
@@ -106,8 +117,13 @@ input:focus {
     width: 100%;
     padding: 15px 8px;
     border: 1px solid #BABABA;
-    background-color: #F6F6F6;
     margin-bottom: 20px;
+}
+.form-write > div:nth-child(9) >input {
+    margin-bottom: 0;
+}
+.form-write label.title-label {
+   margin-top: 40px;
 }
 .form-write  label .star {
     color: #FF5353;
@@ -116,7 +132,16 @@ input:focus {
     margin: 100px 0 165px;
     text-align: center;
 }
-
+.form-button > a {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #137989;
+    padding: 1.3% 5.5%;
+    border: 1px solid #137989;
+    border-radius: 398px 398px 0 398px;
+    margin-right: 20px;
+}
 .form-button > button {
     display: inline-block;
     font-size: 2rem;
@@ -127,11 +152,8 @@ input:focus {
     border-radius: 398px 398px 0 398px;
     cursor: pointer;
 }
-.form-button > button:nth-child(1) {
-    margin-right: 20px;
-}
 
- /* -------------------------footer------------------------------ */
+/* -------------------------footer------------------------------ */
 /* .footer {
     width: 100%;
     height: 260px;
@@ -169,10 +191,13 @@ input:focus {
     
 }
 @media (max-width: 700px) {
-    .form-button > button {
+    .form-button > button,
+    .form-button > a
+     {
         font-size: 1.4rem;
         padding: 3% 10%;
     }
+    
 }
 @media (max-width: 360px) {
     body {
@@ -196,7 +221,6 @@ input:focus {
     .contents1 .sub-contents-title {
         width: 100%;
     }
-  
     .sub-top > .sub-top-visual {
         height: 270px;
         margin-bottom: 120px;
@@ -230,32 +254,31 @@ input:focus {
         width: 100%;
         margin: 59px 0 160px;
     }
+    .form-button > a {
+        display: inline-block;
+        font-size: 1.4rem;
+        padding: 5% 12%;
+        margin-right: 14px;
+    }
     .form-button > button {
         display: inline-block;
         font-size: 1.4rem;
         padding: 5% 12%;
-    }
-    .form-button > button:nth-child(1) {
-        margin-right: 10px;
-    }
-}
-@media (max-width: 289px) {
-
-    .contents1 {
-        padding-left: 16px;
-        padding-right: 16px;
     }
 }
 @media (max-width: 280px) {
     .sub-top > .sub-top-title,
     .sub-top  .sub-top-title-explain {
         padding: 0 16px;
-    } 
+    }
     .sub-top .visual-title-wrap > .visual-explain {
         width: 75%;
         margin: 0 auto;
     }
-    
+    .contents1 {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
     .form-button > button:nth-child(1) {
         margin-right: 7px;
     }
