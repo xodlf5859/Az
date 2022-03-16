@@ -13,8 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -32,12 +35,7 @@ public class AsBoardController {
 	AsBoardService asBoardService;
 	
 	
-	@RequestMapping("/security")
-	public ModelAndView test() {
-		ModelAndView mav = new ModelAndView("/asBoard/password");
-		
-		return mav;
-	}
+	
 	
 //	//페이징처리한 글목록
 //	@RequestMapping(value = "/listCri", method = RequestMethod.GET)
@@ -92,24 +90,7 @@ public class AsBoardController {
 	}
 	
 	
-	//상세보기
-	@RequestMapping(value = "/detail/{asIdx}", method = RequestMethod.GET)
-	public ModelAndView boardDetail(@PathVariable("asIdx") int as_idx, Model model, AsBoardVO asBoardVo) {
-		logger.info("boardDetail접속");
-		ModelAndView mav = new ModelAndView("/asBoard/asdetail");
-		logger.info("가져온 값 : "+as_idx);
-		
-		List<AsBoardVO> list = asBoardService.asBoardDetail(asBoardVo);
-		mav.addObject("list", list);
-		
-//		List<FileVO> fileList = this.boardService.fileList(boardNum);
-//		mav.addObject("fileList", fileList);
-		
-//		logger.info("list의 값 : "+list.toString());
-//		logger.info("fileList의 값 : "+fileList.toString());
-		
-		return mav;
-	}
+	
 	
 	//수정페이지접속
 	@RequestMapping(value = "/asUpdatePage", method = RequestMethod.POST)
@@ -165,5 +146,66 @@ public class AsBoardController {
 		
 		return mav;
 	}
+	
+	//비밀번호 입력창 접속
+	@RequestMapping(value = "/securityC/{asIdx}", method = RequestMethod.GET)
+	public ModelAndView test(@PathVariable("asIdx") int as_idx, Model model, AsBoardVO asBoardVo) {
+		ModelAndView mav = new ModelAndView("/asBoard/password");
+		logger.info("비밀번호 입력시 게시물번호 : "+as_idx);
+		
+		asBoardVo.setAsIdx(as_idx);
+		List<AsBoardVO> list = asBoardService.realPass(asBoardVo);
+		
+//		asBoardVo.setAsPw();
+		String realPass = list.get(0).getAsPw();
+		System.out.println("비밀번호 : "+realPass);
+		
+//		String number = Integer.toString(as_idx);
+		mav.addObject("realPass", realPass);
+		mav.addObject("list", as_idx);
+		logger.info(mav.toString());
+		return mav;
+	}
+	
+//	//비밀번호 입력후 접속
+//	@RequestMapping(value = "/securityCheck", method = RequestMethod.POST)
+//	public ModelAndView securityCheck(@RequestParam("as_idx") int as_idx) {
+//		System.out.println("as_idx" + as_idx);
+//		ModelAndView mav = new ModelAndView("redirect:/asBoard/asdetail/"+as_idx);
+////		logger.info("비밀번호 입력시 게시물번호111111 : "+as_idx);
+//		
+//		return mav;
+//	}
+	//비밀번호 입력후 접속
+	@RequestMapping(value = "/detail/{asIdx}", method = RequestMethod.GET)
+	public ModelAndView securityCheck(@RequestParam("as_idx") int as_idx, AsBoardVO asBoardVo) {
+		System.out.println("as_idx" + as_idx);
+		ModelAndView mav = new ModelAndView("/asBoard/asdetail");
+//		logger.info("비밀번호 입력시 게시물번호111111 : "+as_idx);
+		
+		List<AsBoardVO> list = asBoardService.asBoardDetail(asBoardVo);
+		//조회수증가
+		asBoardService.asCount(asBoardVo);
+		mav.addObject("list", list);
+		return mav;
+	}
+	
+	//상세보기
+//		@RequestMapping(value = "/detail/{asIdx}", method = RequestMethod.GET)
+//		public ModelAndView boardDetail(@PathVariable("asIdx") int as_idx, Model model, AsBoardVO asBoardVo) {
+//			logger.info("boardDetail접속");
+//			ModelAndView mav = new ModelAndView("/asBoard/asdetail");
+//			logger.info("가져온 값 : "+as_idx);
+//			//게시판 상세확인
+//			List<AsBoardVO> list = asBoardService.asBoardDetail(asBoardVo);
+//			//조회수증가
+//			asBoardService.asCount(asBoardVo);
+//			
+//			
+//			mav.addObject("list", list);
+//			
+//			
+//			return mav;
+//		}
 	
 }
