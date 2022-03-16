@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +40,7 @@ public class AsBoardController {
 		ModelAndView mav = new ModelAndView("/asBoard/as");
 		logger.info("as게시판 입장");
 		
-		List<AsBoardVO> asList = this.asBoardService.selectAsBoard(asBoardVo); 
+		List<AsBoardVO> asList = asBoardService.selectAsBoard(asBoardVo); 
 		logger.info(asBoardVo.toString());
 		logger.info("리스트 값 : "+asList);
 		mav.addObject("asList", asList);
@@ -62,7 +64,7 @@ public class AsBoardController {
 		
 		//데이터 잘 넘어옴submit으로
 		//insert로직 넣으셈
-		this.asBoardService.writeAs(asboardVo);
+		asBoardService.writeAs(asboardVo);
 		
 		
 		
@@ -77,7 +79,7 @@ public class AsBoardController {
 		ModelAndView mav = new ModelAndView("/asBoard/asdetail");
 		logger.info("가져온 값 : "+as_idx);
 		
-		List<AsBoardVO> list = this.asBoardService.asBoardDetail(asBoardVo);
+		List<AsBoardVO> list = asBoardService.asBoardDetail(asBoardVo);
 		mav.addObject("list", list);
 		
 //		List<FileVO> fileList = this.boardService.fileList(boardNum);
@@ -87,6 +89,55 @@ public class AsBoardController {
 //		logger.info("fileList의 값 : "+fileList.toString());
 		
 		return mav;
+	}
+	
+	//수정페이지접속
+	@RequestMapping(value = "/asUpdatePage", method = RequestMethod.POST)
+	public ModelAndView asUpdatePage(@ModelAttribute AsBoardVO asboardVo) {
+		ModelAndView mav = new ModelAndView("/asBoard/updatePage");
+		logger.info("업데이트 페이지");
+		logger.info("가져온 데이터 : "+asboardVo);
+		List<AsBoardVO> list = asBoardService.asBoardDetail(asboardVo);
+		
+		mav.addObject("list", list);
+		
+		return mav;
+	}
+	
+	
+	//수정 실행
+	@RequestMapping(value = "/asUpdate", method = RequestMethod.POST)
+	public ModelAndView asUpdate(@ModelAttribute AsBoardVO asboardVo) {
+		ModelAndView mav = new ModelAndView("redirect:/asBoard/as");
+		logger.info("업데이트 실행");
+		logger.info("업데이트에 가져온 데이터 : "+asboardVo);
+		asBoardService.asUpdate(asboardVo);
+		
+		return mav;
+	}
+	
+	//삭제(실질적으로는 없음 update)
+	@RequestMapping(value = "/asDelete", method = RequestMethod.POST)
+	public ModelAndView asDelete(@PathVariable("asIdx") int as_idx, AsBoardVO asBoardVo) {
+		ModelAndView mav = new ModelAndView("redirect:/asBoard/as");
+		
+		logger.info("삭제진행");
+		logger.info("가져온 숫자 : "+as_idx);
+		
+//		asBoardService.asBoardDelete(asBoardVo)
+		
+		return mav;
+	}
+	
+	//답변완료
+	@RequestMapping(value = "/asAnswer", method = RequestMethod.POST)
+	public void asAnswer(HttpServletRequest reauest, AsBoardVO asBoardVo) {
+		
+		logger.info("답변진행");
+		logger.info("가져온 숫자 : "+reauest.getParameter("asIdx"));
+		
+		asBoardService.asBoardAnswer(asBoardVo);
+		
 	}
 	
 }

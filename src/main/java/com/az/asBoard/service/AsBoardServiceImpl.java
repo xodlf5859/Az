@@ -29,6 +29,16 @@ public class AsBoardServiceImpl implements AsBoardService {
 	public List<AsBoardVO> asBoardDetail(AsBoardVO asBoardVo) {
 		return asBoardDAO.asBoardDetail(asBoardVo);
 	}
+
+	@Override
+	public void asUpdate(AsBoardVO asboardVo) {
+		asBoardDAO.asUpdate(asboardVo);
+	}
+
+	@Override
+	public void asBoardAnswer(AsBoardVO asBoardVo) {
+		asBoardDAO.asBoardAnswer(asBoardVo);	
+	}
 	
 	
 	

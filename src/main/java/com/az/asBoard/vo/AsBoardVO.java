@@ -16,8 +16,17 @@ public class AsBoardVO {
 	private String asDate;
 	private String asTitle;
 	private String asContent;
+	private String asStatus;
 	
 	
+	
+	
+	public String getAsStatus() {
+		return asStatus;
+	}
+	public void setAsStatus(String asStatus) {
+		this.asStatus = asStatus;
+	}
 	public int getAsIdx() {
 		return asIdx;
 	}
@@ -88,9 +97,9 @@ public class AsBoardVO {
 	public String toString() {
 		return "AsBoardVO [asIdx=" + asIdx + ", asName=" + asName + ", asPw=" + asPw + ", asApt=" + asApt
 				+ ", asDetail=" + asDetail + ", asPhone=" + asPhone + ", asItem=" + asItem + ", asStore=" + asStore
-				+ ", asDate=" + asDate + ", asTitle=" + asTitle + ", asContent=" + asContent + "]";
+				+ ", asDate=" + asDate + ", asTitle=" + asTitle + ", asContent=" + asContent + ", asStatus=" + asStatus
+				+ "]";
 	}
-	
 	
 	
 	

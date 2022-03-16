@@ -45,10 +45,6 @@
 				<td><input type="text" name="asStore"></td>
 			</tr>
 			<tr>
-				<td>접수일</td>
-				<td><input type="text" name="asDate"></td>
-			</tr>
-			<tr>
 				<td>제목</td>
 				<td><input type="text" name="asTitle"></td>
 			</tr>

@@ -11,6 +11,10 @@ public interface AsBoardService {
 	void writeAs(AsBoardVO asboardVo);
 
 	List<AsBoardVO> asBoardDetail(AsBoardVO asBoardVo);
+
+	void asUpdate(AsBoardVO asboardVo);
+
+	void asBoardAnswer(AsBoardVO asBoardVo);
 	
 
 
