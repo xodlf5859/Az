@@ -2,8 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,9 +12,10 @@
     <title>(주)아트젠</title>
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/header_footer.css">
-    <link rel="stylesheet" href="../css/as-form.css">
+    <link rel="stylesheet" href="../css/cooperator-request-read-password.css">
 </head>
 <body>
+    <!-- as 신청 글을 클릭했을 때 비밀번호 입력 페이지입니다 -->
   <div class="header">
     <div class="header-logo">
     </div>
@@ -109,78 +111,28 @@
           <div class="title-decoration"></div>
           <p class="sub-title">AS 접수센터</p>
           <p class="sub-title-explain">하자보수 접수 센터입니다. 최대한 빠르게 답변해드리겠습니다.</p>
+      </div>
+        <div class="secreat-page">
+            <p>비밀글 보기</p>
+            <p>이 글은 비밀글입니다. 비밀번호를 입력해 주세요.</p>
         </div>
-<c:forEach var="var" items="${list}">
-	<form action="/asBoard/asUpdate" method="POST">
-			
-	<button type="submit">확인</button>
-	<button type="button" onclick="location.href='/asBoard/as'">취소</button>
-<%-- 	<button type="button" onclick="location.href='/asBoard/asDelete'" value="${var.asIdx}" name="asIdx">삭제</button> --%>
-
-				 <div class="form-write">
+        <form name="fwite" id="fwrite" action="" method="">
+            <div class="form-write">
                 <div class="form-write-in">
-                	<input type="text" name="asIdx" value="${var.asIdx}" style="display: none;">
-                    <label><span class="star">*</span>성명</label>
-                    <input type="text" name="asName" value="${var.asName}">
-                </div>
-                <div class="form-write-in">
-                    <label><span class="star">*</span>비밀번호</label>
-                    <input type="password" name="asPw" value="${var.asPw}">
-                </div>
-                <div class="form-write-in">
-                  <label><span class="star">*</span>아파트명</label>
-                  <input type="text" name="asApt" value="${var.asApt}">
-                </div>
-                <div class="form-write-in">
-                  <label><span class="star">*</span>동/ 호수</label>
-                  <input type="text" name="asDetail" value="${var.asDetail}">
-                </div>
-                <div class="form-write-in">
-                  <label><span class="star">*</span>고객님 연락처</label>
-                  <input type="text" name="asPhone" value="${var.asPhone}">
-                </div>
-                <div class="form-write-in">
-                  <label><span class="star">*</span>구매품목</label>
-                  <input type="text" name="asItem" value="${var.asItem}">
-                </div>
-                <div class="form-write-in">
-                  <label>판매 업체명</label>
-                  <input type="text" name="asStore" value="${var.asStore}">
-                </div>
-                <div class="form-write-in">
-                  <label>접수일</label>
-                  <input type="text" name="asDate" value="${var.asDate}">
-                </div>
-                <div class="form-write-in-100">
-                  <label class="title-label"><span class="star">*</span>제목</label>
-                  <input type="text" name="asTitle" value="${var.asTitle}">
-                </div>
-                <textarea class="form-write-in-100-text" name="asContent">${var.asContent}</textarea>
+                    <label for="wr-password"><span class="star">*</span>비밀번호</label>
+                    <input type="password" id="wr-password">
+                </div>                                          
             </div>
             <div class="form-button">
-              <a href="/asBoard/as" class="btn-cancle">취소</a>
-              <button type="submit" id="btn_submit" class="btn-submit">작성완료</button>
+              <button id="btn_cancel" class="btn_cancel">확인</button>
+                <a href="#" class="btn-cancle">뒤로가기</a>
             </div>
-
-
-	</form>
-</c:forEach>
-
- <div class="footer">
-  <div class="footer-top">
-    <div class="logo"></div>
-    <div>
-      <a href="">개인정보처리방침</a>
-      <a href="">이용약관</a>
+        </form>
+      </div>
+    <div class="footer">
+      footer
     </div>
-  </div>
-  <div class="footer-bottom">
-    <div>
-      <div>(34161)  대전광역시 유성구 복용북로 33번길 1  TEL : 042-825-6490</div>
-      <div>대표 이도엽  사업자등록번호 193-88-01901</div>
-    </div>
-    <div>Copyright ⓒ 2022 ARTZEN All Rights Reserved.</div>
-  </div>
-</div>
 </body>
 </html>
+
+

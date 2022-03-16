@@ -19,13 +19,32 @@
 	</resultMap>
 	
 <!-- 	게시글 검색	//게시판보기 -->
-	<select id="selectAsBoard" resultMap="asboardVo">
+<!-- 	<select id="selectAsBoard" resultMap="asboardVo"> -->
+<!-- 		select -->
+<!-- 			 * -->
+<!-- 		from asboard -->
+<!-- 		where as_read = 'Y' -->
+		
+<!-- 	</select> -->
+	
+	
+<select id="listCriteria" resultMap="asboardVo">
+		<![CDATA[
 		select
-			 *
-		from asboard
+		    *
+		from
+		    asboard
 		where as_read = 'Y'
-<!-- 		where type =  -->
-	</select>
+		limit #{pageStart}, #{perPageNum}
+		]]>
+</select>
+
+<select id="listCountCriteria" resultType="int">
+	select count(*) as totalCount from asboard
+
+</select>
+
+	
 	
 	<insert id="writeAs" parameterType="com.az.asBoard.vo.AsBoardVO">
 		insert into asboard(
@@ -41,7 +60,6 @@
 	<select id="asBoardDetail" resultMap="asboardVo">
 		select * from asboard
 		where as_idx = #{asIdx}
-	
 	</select>
 	
 <!-- 	수정 -->
@@ -49,6 +67,7 @@
 		update asboard 
 			set 
 				as_name = #{asName},
+				as_pw = #{asPw},
 				as_apt = #{asApt},
 				as_detail = #{asDetail},
 				as_phone = #{asPhone},
@@ -64,7 +83,7 @@
 	
 
 <!-- 	질문처리	 -->
-	<update id="asDelete" parameterType="com.az.asBoard.vo.AsBoardVO">
+	<update id="asBoardDelete" parameterType="com.az.asBoard.vo.AsBoardVO">
 		update asboard 
 		set as_read = "N"
 		where as_idx = #{asIdx}

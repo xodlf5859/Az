@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import com.az.asBoard.vo.AsBoardVO;
+import com.az.paging.Criteria;
 
 @Repository
 @Mapper
@@ -20,6 +21,18 @@ public interface AsBoardMapper {
 	void asUpdate(AsBoardVO asboardVo);
 
 	void asBoardAnswer(AsBoardVO asBoardVo);
+
+	void asBoardDelete(AsBoardVO asBoardVo);
+
+	int getBoardCnt(AsBoardVO asBoardVo);
+
+	int listCountCriteria(Criteria cri);
+
+	List<AsBoardVO> listCriteria(Criteria cri);
+
+
+
+
 
 	
 }
