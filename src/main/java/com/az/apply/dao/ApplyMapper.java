@@ -23,4 +23,7 @@ public interface ApplyMapper {
 	
 	//삭제
 	void deleteApply(int ApplyIdx) throws Exception;
+	
+	//답변 상태 변경
+	void updateState(List<Integer> applyList) throws Exception;
 }

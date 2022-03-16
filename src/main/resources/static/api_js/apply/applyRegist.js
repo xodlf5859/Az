@@ -91,7 +91,7 @@ let insert = async (data) => {
 	})
 	if (rqResult.ok == true) {
 		alert("등록 성공했습니다.");
-		location.href = "http://localhost:8080/partner/list"
+		location.href = "list"
 
 	} else if (rqResult.ok == false) {
 		alert("등록 실패했습니다. 다시 시도해주세요");

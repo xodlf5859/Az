@@ -273,14 +273,14 @@ input:focus {
  }
 
 /* -------------------------footer------------------------------ */
-.footer {
+/* .footer {
     width: 100%;
     height: 260px;
     line-height: 260px;
     background: #EFEFEF;
     text-align: center;
     font-size: 30px;
-}
+} */
 
 
 /* ------------------------반응형----------------------------- */
@@ -385,7 +385,7 @@ input:focus {
         margin: 70px 0 25px;
     }
    .cooperator-request-board .b-title {
-       width: 100%;
+       max-width: 100%;
        height: 42px;
        margin: 25px 0 12px;
        white-space: normal;
@@ -417,7 +417,13 @@ input:focus {
     .cooperator-request-board .b-view {
         display: none;
     }
-    .borad-bottom-01, .borad-bottom-02 {
+    /* .borad-bottom-01, .borad-bottom-02 {
+        display: none;
+    } */
+    .borad-bottom-01 {
+        justify-content: right;
+    }
+    .b-state {
         display: none;
     }
     .mobile-viewmore {
@@ -434,11 +440,24 @@ input:focus {
     body {
         overflow-x: hidden;
     }
+    .sub-top  {
+        width: 100%;
+        font-size: 39px;
+        margin-bottom: 29px;
+    }
     .sub-top > .sub-top-title {
         width: 100%;
         font-size: 39px;
         margin-bottom: 29px;
+        padding: 0 32px;
     } 
+    .sub-top  .sub-top-title-explain {
+        padding: 0 32px;
+    } 
+    .contents1 {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
     .contents1 .sub-contents-title {
         width: 100%;
     }
@@ -469,6 +488,9 @@ input:focus {
     .contents1 .sub-title  { 
         font-size:2.8rem;
     }
+    .contents1 {
+        position: relative;
+    }
     .contents1 .sub-title-explain {
         font-size: 1.6rem;
         margin-bottom: 30px;
@@ -482,7 +504,7 @@ input:focus {
    }
    .c-r-b-wrap > .cooperator-request-board {
     width: 100%;
-    padding: 0 16px;
+    padding: 0;
 
    }
    .cooperator-request-board .b-number {
@@ -504,7 +526,7 @@ input:focus {
         margin: 70px 0 25px;
     }
    .cooperator-request-board .b-title {
-       width: 100%;
+       max-width: 100%;
        height: 42px;
        overflow: hidden;
        text-overflow: ellipsis;
@@ -536,7 +558,13 @@ input:focus {
     .cooperator-request-board .b-view {
         display: none;
     }
-    .borad-bottom-01, .borad-bottom-02 {
+    .borad-bottom-01 {
+        position: absolute;
+        top: 16%;
+        left: 1%;
+        justify-content: left;
+    }
+    .borad-bottom-02 {
         display: none;
     }
     .mobile-viewmore {
@@ -551,14 +579,29 @@ input:focus {
         
 }
 @media (max-width: 280px) {
-    .sub-top .visual-title-wrap > .visual-explain {
+    .sub-top > .sub-top-title {
+        padding: 0 16px;
+    } 
+    .sub-top  .sub-top-title-explain {
+        padding: 0 16px;
+    }
+    /* .sub-top .visual-title-wrap > .visual-explain {
         width: 75%;
         margin: 0 auto;
+    } */
+    .contents1 {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .borad-bottom-01 {
+        top: 19%;
+        left: -4%;
     }
     .cooperator-request-board .b-date {
-        width: 36%;
+        width: 43%;
     }
     .mobile-viewmore {
         font-size: 1.4rem;
     }
+ 
 }

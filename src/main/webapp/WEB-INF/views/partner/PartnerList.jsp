@@ -115,7 +115,7 @@
         <div class="c-r-b-wrap">
             <ol>
                 <li>
-                  <input type="checkbox" class="b-check-box">
+                  <input type="checkbox" class="b-check-box" id="checkAll">
                 </li>
                 <li>번호</li>
                 <li>제목</li>
@@ -126,9 +126,9 @@
             <ul class="cooperator-request-board">
             <C:forEach var="list" items="${selectList }" >
                 <li>
-                    <a href="/partner/list/${list.applyIdx }">
+                    <a href="/partner/check?applyIdx=${list.applyIdx }">
                     <input type="hidden" value="${list.applyIdx }">
-                      <input type="checkbox" class="b-check-box" >  
+                      <input type="checkbox" class="b-check-box" name="answerCheck" id="answerCheck" value="${list.applyIdx }" >  
                      <p class="b-number">${list.applyIdx }</p>   
                      <div class="b-title-wrap">
                        <p class="b-title">-비밀글 입니다.-</p>
@@ -163,8 +163,8 @@
             </ul>
         </div>
         <div class="borad-bottom-01">
-          <button class="b-state"><img src="/img/b-check.png">답변완료</button>
-          <button class="b-write"><img src="/img/b-write.png">글쓰기</button>
+          <button class="b-state" id="answerBtn"><img src="/img/b-check.png">답변완료</button>
+          <button class="b-write" id="writeBtn"><img src="/img/b-write.png">글쓰기</button>
         </div>
         <ul class="borad-bottom-02">
           <li><a href="#" class="first">처음</a></li>
@@ -177,9 +177,22 @@
       <button class="mobile-viewmore">
         더보기
       </button>
-    <div class="footer">
-      footer
-    </div>
+<div class="footer">
+        <div class="footer-top">
+          <div class="logo"></div>
+          <div>
+            <a href="">개인정보처리방침</a>
+            <a href="">이용약관</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>
+            <div>(34161)  대전광역시 유성구 복용북로 33번길 1  TEL : 042-825-6490</div>
+            <div>대표 이도엽  사업자등록번호 193-88-01901</div>
+          </div>
+          <div>Copyright ⓒ 2022 ARTZEN All Rights Reserved.</div>
+        </div>
+      </div>
     
 <script type="text/javascript" src="../api_js/apply/applyList.js"></script>
     

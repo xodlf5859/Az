@@ -32,8 +32,6 @@ public class applyController {
 		
 		List<ApplyVO> selectList = applyService.selectApply(applyVO);
 		
-		System.out.println(selectList.get(0).getApplyRegdate());
-		System.out.println(selectList.get(0).getApplyCompany());
 		mnv.addObject("selectList",selectList);
 		mnv.setViewName("partner/PartnerList");
 		
@@ -66,6 +64,7 @@ public class applyController {
 		return mnv;
 	}
 	
+	//수정 폼
 	@RequestMapping("/modify")
 	public ModelAndView partnerModifyForm(int applyIdx, ModelAndView mnv) throws Exception{
 		
@@ -77,7 +76,7 @@ public class applyController {
 		return mnv;
 	}
 	
-	
+	//수정
 	@PutMapping("/list")
 	@ResponseBody
 	public void updatePartner(@RequestBody ApplyVO applyVO) throws Exception{
@@ -89,7 +88,7 @@ public class applyController {
 		
 	}
 
-	
+	//삭제
 	@DeleteMapping("/list")
 	@ResponseBody
 	public void deletePartner(@RequestBody ApplyVO applyVO) throws Exception{
@@ -97,5 +96,24 @@ public class applyController {
 		
 		applyService.deleteApply(applyIdx);
 	}
+	
+	//비밀번호 확인
+	@GetMapping("/check")
+	public ModelAndView checkPw(ModelAndView mnv,int applyIdx) throws Exception{
+		ApplyVO applyVO = applyService.detailApply(applyIdx);
+
+		mnv.setViewName("partner/PartnerPassword");
+		mnv.addObject("applyVO",applyVO);
+		return mnv;
+	}
+	
+	@PutMapping("/state")
+	@ResponseBody
+	public void updateState(@RequestBody List<Integer> applyIdxList) throws Exception{
+		System.out.println(applyIdxList);
+		
+		applyService.updateState(applyIdxList);
+	}
+	
 	
 }

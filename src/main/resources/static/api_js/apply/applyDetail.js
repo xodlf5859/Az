@@ -17,10 +17,15 @@ updateBtn.onclick=()=>{
 }
 
 deleteBtn.onclick=()=>{
+	if(confirm("정말로 삭제하시겠습니까?") == true){
+		
 	data.applyIdx = applyIdx.value;
-	
+	console.log(location.href);
 	deletePartner(data)
 }
+	
+
+	}
 	let deletePartner = async (data) =>{
 		let rqResult = await fetch('http://localhost:8080/partner/list', {
 		method: "DELETE",
@@ -32,10 +37,10 @@ deleteBtn.onclick=()=>{
 		)
 	})
 		if (rqResult.ok == true) {
-		alert(rqResult + " 성공");
+		alert("삭제 성공");
+		location.href = "../list";
 		}
 		else if(rqResult.ok == false){
-			alert("실패");
+			alert("삭제 실패");
 		}
-
 	}

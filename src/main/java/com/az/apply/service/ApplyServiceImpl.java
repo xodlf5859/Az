@@ -40,6 +40,9 @@ public class ApplyServiceImpl implements ApplyService {
 	public void deleteApply(int ApplyIdx) throws Exception {
 		applyMapper.deleteApply(ApplyIdx);
 	}
-
+	@Override
+	public void updateState(List<Integer> applyList) throws Exception {
+		applyMapper.updateState(applyList);
+	}
 	
 }

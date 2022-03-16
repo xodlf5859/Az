@@ -113,22 +113,27 @@
             <p>비밀글 보기</p>
             <p>이 글은 비밀글입니다. 비밀번호를 입력해 주세요.</p>
         </div>
-        <form name="fwite" id="fwrite" action="" method="">
+<!--         <form name="fwite" id="fwrite" action="" method=""> -->
             <div class="form-write">
                 <div class="form-write-in">
                     <label for="wr-password"><span class="star">*</span>비밀번호</label>
                     <input type="password" id="wr-password">
+                    <input type="hidden" id="applyIdx" value="${applyVO.applyIdx }"> 
+                    <input type="hidden" id="passwordCheck" value="${applyVO.applyPw }"> 
                 </div>                                          
             </div>
             <div class="form-button">
-              <button id="btn_cancel" class="btn_cancel">확인</button>
-                <a href="#" class="btn-cancle">뒤로가기</a>
+              <button id="submitBtn" class="btn_cancel">확인</button>
+                <a class="btn-cancle" id="backBtn">뒤로가기</a>
             </div>
-        </form>
+<!--         </form> -->
       </div>
     <div class="footer">
       footer
     </div>
+    
+    <script type="text/javascript" src="../api_js/apply/applyCheck.js"></script>
+    
 </body>
 </html>
 

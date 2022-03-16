@@ -99,6 +99,14 @@
   where apply_idx = #{applyIdx}
   </update>
 
+	<update id="updateState" parameterType="java.util.List">
+		update apply set
+		apply_state = 1
+		where apply_idx in 
+		<foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+		#{item}
+		</foreach>
+	</update>
 
   
   
