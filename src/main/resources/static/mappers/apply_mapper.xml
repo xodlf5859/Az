@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.az.apply.dao.ApplyMapper">
+	
+	<resultMap id="apply" type="com.az.apply.vo.ApplyVO">
+		<result property="applyIdx" column="apply_idx"/>
+		<result property="applyManager" column="apply_manager"/>
+		<result property="applyPw" column="apply_pw"/>
+		<result property="applyEmail" column="apply_email"/>
+		<result property="applyPhone" column="apply_phone"/>
+		<result property="applyCompany" column="apply_company"/>
+		<result property="applyName" column="apply_name"/>
+		<result property="applyGroupBuying" column="apply_groupBuying"/>
+		<result property="applyItem" column="apply_item"/>
+		<result property="applyOffice" column="apply_office"/>
+		<result property="applyStore" column="apply_store"/>
+		<result property="applyFactory" column="apply_factory"/>
+		<result property="applyArea" column="apply_area"/>
+		<result property="applyHomepage" column="apply_homepage"/>
+		<result property="applyState" column="apply_state"/>
+		<result property="applyRegdate" column="apply_regdate"/>
+	</resultMap>
+	
+<!-- 	게시글 검색 -->
+	<select id="selectApply" parameterType="com.az.apply.vo.ApplyVO" resultMap="apply">
+		select
+			 *
+		from apply 
+		order by apply_idx desc
+	</select>
+
+<!-- 	게시글 상세보기 -->
+	<select id="detailApply" parameterType="com.az.apply.vo.ApplyVO" resultMap="apply">
+		select
+			 *
+		from apply 
+		where apply_idx = #{applyIdx}
+		
+	</select>
+	
+	<!-- 협력사 신청 등록  -->
+	<insert id="insertApply" parameterType="com.az.apply.vo.ApplyVO">
+		insert into apply 
+		(apply_manager,
+		apply_pw,
+		apply_email,
+		apply_phone,
+		apply_company,
+		apply_name,
+		apply_groupBuying,
+		apply_item,
+		apply_office,
+		apply_store,
+		apply_factory,
+		apply_area,
+		apply_homepage
+		)
+		values
+		(#{applyManager},
+		#{applyPw},
+		#{applyEmail},
+		#{applyPhone},
+		#{applyCompany},
+		#{applyName},
+		#{applyGroupBuying},
+		#{applyItem},
+		#{applyOffice},
+		#{applyStore},
+		#{applyFactory},
+		#{applyArea},
+		#{applyHomepage}
+		)
+	</insert>
+	
+	<!-- 게시글 수정  -->
+	<update id="updateApply"  parameterType="com.az.apply.vo.ApplyVO" >
+	update apply 
+	set
+	apply_manager = #{applyManager}, 
+	apply_pw = #{applyPw},
+	apply_email = #{applyEmail},
+	apply_phone = #{applyPhone},
+	apply_company = #{applyCompany},
+	apply_name = #{applyName},
+	apply_groupBuying = #{applyGroupBuying},
+	apply_item = #{applyItem},
+	apply_office = #{applyOffice},
+	apply_store = #{applyStore},
+	apply_factory = #{applyFactory},
+	apply_area = #{applyArea},
+	apply_homepage = #{applyHomepage}
+	where apply_idx = #{applyIdx}
+	</update>
+
+
+  <update id="deleteApply"  parameterType="com.az.apply.vo.ApplyVO" >
+  delete from apply
+  where apply_idx = #{applyIdx}
+  </update>
+
+
+  
+  
+</mapper>

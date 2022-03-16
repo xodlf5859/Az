@@ -53,9 +53,7 @@ let insert = async(data)=>{
         alert("ㅇㅋ");
     }else if(rqResult.ok==false){
         alert("ss");
-	
 }
-
 }
 
 

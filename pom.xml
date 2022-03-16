@@ -60,17 +60,14 @@
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-		</dependency>
 
-		<!-- JSTL -->
+		<!-- jstl -->
 		<dependency>
-		    <groupId>jstl</groupId>
+		    <groupId>javax.servlet</groupId>
 		    <artifactId>jstl</artifactId>
 		    <version>1.2</version>
 		</dependency>
+
 
 
 		<dependency>
