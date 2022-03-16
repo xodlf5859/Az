@@ -11,7 +11,7 @@ import com.az.fair.vo.FairVO;
 public interface FairMapper {
 
 	//게시글 검색
-	List<BoardVO> selectFair(FairVO fairVO) throws Exception;
+	List<FairVO> selectFair(FairVO fairVO) throws Exception;
 	
 	//등록
 	void insertFair(FairVO fairVO) throws Exception;

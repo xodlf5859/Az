@@ -18,13 +18,13 @@
 		select
 			 *
 		from board
-		where type = fair
+		where board_type = 'fair'
 	</select>
 	
 	<!-- 박람회게시글등록  -->
 	<insert id="insertFair" parameterType="com.az.fair.vo.FairVO">
 		insert into board (board_title,board_content,board_writer,board_type)
-		values(#{boardTitle},#{boardContent},#{boardWriter},'fair')
+		values(#{boardTitle},#{boardContent},'관리자','fair')
 	</insert>
 	
 	<!-- 게시글 수정  -->

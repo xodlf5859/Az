@@ -18,15 +18,13 @@ public class FairServiceImpl implements FairService {
 	FairMapper fairMapper;
 
 	@Override
-	public List<BoardVO> selectFair(FairVO fairVO) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public List<FairVO> selectFair(FairVO fairVO) throws Exception {
+		return fairMapper.selectFair(fairVO);
 	}
-
 	@Override
 	public void insertFair(FairVO fairVO) throws Exception {
-		// TODO Auto-generated method stub
-		
+
+		fairMapper.insertFair(fairVO);
 	}
 
 	@Override

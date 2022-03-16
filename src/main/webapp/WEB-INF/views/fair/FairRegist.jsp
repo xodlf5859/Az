@@ -95,8 +95,9 @@
     </div>
   </div>
   <div class="sub-top">
-    <h1 class="sub-top-title">입주박람회</h1>
-    <p class="sub-top-title-explain">아트젠의 입주박람회를 소개합니다.</p>  
+      <h1 class="sub-top-title">입주박람회</h1>
+      <p class="sub-top-title-explain">아트젠의 입주박람회를 소개합니다.</p>
+ 
     <div class="sub-top-visual">
       <div class="visual-title-wrap">
         <p class="visual-title">입주박람회</p>
@@ -111,28 +112,61 @@
       <p class="sub-title-explain">아트젠의 입주박람회 현장을 보여드리겠습니다.</p>
     </div>
   </div>
-  <div class="fair">
-    <div class="fair-wrap">
-      <div class="fair-img"></div>
-      <div class="fair-info">
-        <div class="fair-title"><a href="">${fairList[0].boardTitle}</a></div>
-        <div class="fair-date"><a href="">${fairList[0].boardRegdate }</a></div>
+  <div class="fair-post">
+    <div>글쓰기</div>
+    <div class="post-wrap">
+      <div class="contents">
+        <div class="title">
+          <span>*</span>
+          <p>제목</p>
+        </div>
+        <form action="list" method="post" enctype="multipart/form-data">
+        <input type="text" id="boardTitle">
       </div>
+      <div class="contents">
+        <div class="title">
+          <span>*</span>
+          <p>이미지 등록하기</p>
+        </div>
+          <input type="file" name="" id="fairImgUpload" multiple accept="image/png, image/jpeg, image/jpg , image/gif">
+
+        <div class="img-file-wrap">
+          <div class="file-name">
+            <div>파일명</div>
+            <ul class="file-list">
+              <!-- 파일 추가 시 li 자체 복붙 -->
+              <li>
+                <button class="delete-btn"></button>
+                <div>abc.jpg</div>
+              </li>
+            </ul>
+          </div>
+          <div class="file-size">
+            <div>용량</div>
+            <ul class="file-list">
+              <!-- 파일 추가 시 li 자체 복붙 -->
+              <li>
+                <div>10mb</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="contents ">
+        <div class="title">
+          <span>*</span>
+          <p>내용</p>
+        </div>
+        <textarea name="" id="boardContent" style="width: 1392px; height: 400px;" rows="20"></textarea>
+      </div>
+      <div class="form-button">
+        <button id="btn_cancel" class="btn_cancel">취소하기</a>
+        <button type="submit" id="btn_submit" class="btn-submit">등록하기</button>
     </div>
-  <div class="form-button">
-    <button>글쓰기</button>
+    </div>
   </div>
-  <ul class="borad-bottom-02">
-    <li><a href="#" class="first">처음</a></li>
-    <li><a href="#" class="prev">이전</a></li>
-    <li><a href="#" class="num active">1</a></li>
-    <li><a href="#" class="num">2</a></li>
-    <li class="display-none"><a href="#" class="num">3</a></li>
-    <li class="display-none"><a href="#" class="num">4</a></li>
-    <li class="display-none"><a href="#" class="num">5</a></li>
-    <li><a href="#" class="next">다음</a></li>
-    <li><a href="#" class="last">마지막</a></li>
-  </ul>
+        </form>
   <div class="footer">
     <div class="footer-top">
       <div class="logo"></div>
@@ -150,8 +184,7 @@
     </div>
   </div>
   
-  
-  <script type="text/javascript" src="../api_js/common.js"></script>
+      <script type="text/javascript" src="../api_js/fair/fairRegist.js"></script>
   
 </body>
 </html>
