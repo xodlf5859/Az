@@ -3,10 +3,16 @@ package com.az.apply.service;
 import java.util.List;
 
 import com.az.apply.vo.ApplyVO;
+import com.az.common.Criteria;
 
 public interface ApplyService {
 
-	List<ApplyVO> selectApply(ApplyVO applyVO) throws Exception;
+	//게시판 조회
+	List<ApplyVO> selectApply(ApplyVO applyVO,Criteria cri) throws Exception;
+	
+	//총 글 갯수 확인
+	int countApply() throws Exception;
+	
 	
 	//상세보기 
 	ApplyVO detailApply(int applyIdx) throws Exception;

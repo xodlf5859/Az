@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.az.apply.dao.ApplyMapper;
 import com.az.apply.vo.ApplyVO;
+import com.az.common.Criteria;
 
 @Service
 public class ApplyServiceImpl implements ApplyService {
@@ -21,9 +22,9 @@ public class ApplyServiceImpl implements ApplyService {
 	}
 
 	@Override
-	public List<ApplyVO> selectApply(ApplyVO applyVO) throws Exception {
+	public List<ApplyVO> selectApply(ApplyVO applyVO,Criteria cri) throws Exception {
 		
-		return applyMapper.selectApply(applyVO);
+		return applyMapper.selectApply(applyVO,cri);
 	}
 
 	@Override
@@ -43,6 +44,11 @@ public class ApplyServiceImpl implements ApplyService {
 	@Override
 	public void updateState(List<Integer> applyList) throws Exception {
 		applyMapper.updateState(applyList);
+	}
+
+	@Override
+	public int countApply() throws Exception {
+		return applyMapper.countApply();
 	}
 	
 }

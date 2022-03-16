@@ -166,14 +166,42 @@
           <button class="b-state" id="answerBtn"><img src="/img/b-check.png">답변완료</button>
           <button class="b-write" id="writeBtn"><img src="/img/b-write.png">글쓰기</button>
         </div>
-        <ul class="borad-bottom-02">
-          <li><a href="#" class="first">처음</a></li>
-          <li><a href="#" class="prev">이전</a></li>
-          <li><a href="#" class="num">1</a></li>
-          <li><a href="#" class="num">2</a></li>
-          <li><a href="#" class="next">다음</a></li>
-          <li><a href="#" class="last">마지막</a></li>
+<!--         <ul class="borad-bottom-02"> -->
+<!--           <li><a href="#" class="first">처음</a></li> -->
+<!--           <li><a href="#" class="prev">이전</a></li> -->
+<!--           <li><a href="#" class="num">1</a></li> -->
+<!--           <li><a href="#" class="num">2</a></li> -->
+<!--           <li><a href="#" class="next">다음</a></li> -->
+<!--           <li><a href="#" class="last">마지막</a></li> -->
+<!--         </ul> -->
+<%-- ${pageMaker.pageNum } --%>
+	      <ul class="borad-bottom-02">
+	    <c:if test="${pageMaker.prev }">
+	    <li>
+	        <a href='/partner/list?page=${pageMaker.startPage-1 }' class="prev">이전</a>
+	    </li>
+	    </c:if>
+	    <C:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="pageNum">
+	    <li>
+	        <a href='/partner/list?page=${pageNum }' class="num">${pageNum }</a>
+	    </li>
+	    </C:forEach>
+	    <c:if test="${pageMaker.next && pageMaker.endPage >0 }">
+	    <li>
+	        <a href='/partner/list?page=${pageMaker.endPage+1 }' class="next">다음</a>
+	    </li>
+	    </c:if>
+	    <li>
+	    </li>
+	</ul>
+
+          
       </div>
+      
+
+
+
+      
       <button class="mobile-viewmore">
         더보기
       </button>

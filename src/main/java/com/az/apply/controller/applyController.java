@@ -19,6 +19,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.az.apply.service.ApplyService;
 import com.az.apply.vo.ApplyVO;
 import com.az.board.vo.BoardVO;
+import com.az.common.Criteria;
+import com.az.common.PageMaker;
 
 @Controller
 @RequestMapping("/partner")
@@ -27,12 +29,20 @@ public class applyController {
 	@Autowired
 	ApplyService applyService;
 	
+	//게시판 조회
 	@GetMapping("/list")
-	public ModelAndView selectPartner(ApplyVO applyVO,ModelAndView mnv) throws Exception{
+	public ModelAndView selectPartner(ApplyVO applyVO,ModelAndView mnv,Criteria cri) throws Exception{
 		
-		List<ApplyVO> selectList = applyService.selectApply(applyVO);
+		
+	    PageMaker pageMaker = new PageMaker();
+	    pageMaker.setCri(cri);
+	    pageMaker.setTotalCount(applyService.countApply());
+
+
+		List<ApplyVO> selectList = applyService.selectApply(applyVO,cri);
 		
 		mnv.addObject("selectList",selectList);
+		mnv.addObject("pageMaker",pageMaker);
 		mnv.setViewName("partner/PartnerList");
 		
 		return mnv;

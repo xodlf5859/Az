@@ -28,6 +28,7 @@
 			 *
 		from apply 
 		order by apply_idx desc
+		limit #{cri.pageStart}, #{cri.perPageNum}
 	</select>
 
 <!-- 	게시글 상세보기 -->
@@ -93,12 +94,13 @@
 	where apply_idx = #{applyIdx}
 	</update>
 
-
+	<!--게시글 삭제  -->
   <update id="deleteApply"  parameterType="com.az.apply.vo.ApplyVO" >
   delete from apply
   where apply_idx = #{applyIdx}
   </update>
 
+	<!-- 답변 상태 수정  -->
 	<update id="updateState" parameterType="java.util.List">
 		update apply set
 		apply_state = 1
@@ -108,6 +110,11 @@
 		</foreach>
 	</update>
 
+  	<!-- 전체 게시글 수 계산  -->
+  
+	<select id="countApply" parameterType="Integer" resultType="Integer">
+		select count(*) from apply
+	</select>
   
   
 </mapper>

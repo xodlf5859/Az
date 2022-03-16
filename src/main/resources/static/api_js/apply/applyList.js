@@ -54,6 +54,7 @@ checkAll.onclick = ()=>{
 		})
 			if (rqResult.ok == true) {
 				alert("성공")
+				location.reload();
 				}
 
 
