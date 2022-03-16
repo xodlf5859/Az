@@ -174,7 +174,6 @@
 <!--           <li><a href="#" class="next">다음</a></li> -->
 <!--           <li><a href="#" class="last">마지막</a></li> -->
 <!--         </ul> -->
-<%-- ${pageMaker.pageNum } --%>
 	      <ul class="borad-bottom-02">
 	    <c:if test="${pageMaker.prev }">
 	    <li>

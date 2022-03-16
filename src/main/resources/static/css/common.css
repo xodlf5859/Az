@@ -19,10 +19,9 @@ button{
   border: none;
   background: none;
 }
-input{
-  display: none;
+body{
+  /* overflow-x: hidden; */
 }
-
 /*  */
 
 .viewmore{
@@ -49,3 +48,144 @@ input{
 .display-none{
   display: none;
 }
+
+/* 서브페이지 타이틀 */
+/* ---------------------------sub top 타이틀---------------------- */
+.sub-top {
+  width: 1364px;  
+  margin: 0 auto; 
+  /* height: 140px; */
+  margin-top: 91px;
+ }
+ .sub-top > .sub-top-title  {
+     font-size: 6rem;
+     font-weight: bold;
+     margin-bottom: 48px;
+     color: #137989; 
+ }
+ .sub-top > .sub-top-title-explain {
+     font-size: 2.4rem;
+     color: #333333;
+     margin-bottom: 60px;
+ }
+ .sub-top > .sub-top-visual {
+    position: relative; 
+    width: 1364px;
+    height: 422px;
+    margin-bottom: 152px;
+    background: url(../img/temp--img1.jpg);
+    background-size: cover; 
+ }
+ .sub-top  .visual-title-wrap {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     text-align: center;   
+ }
+ .sub-top  .visual-title-wrap > .visual-title {
+     font-size: 4.2rem;
+     font-weight: bold;
+     color: #fff;
+ }
+ .sub-top  .visual-title-wrap > .visual-explain {
+     font-size: 2rem;
+     color: #fff;     
+ }
+ /* ------------------------contents---------------------- */
+ .contents1 {
+     width: 1364px;
+     height: auto;
+     margin: 0 auto;
+ }
+ .contents1 .sub-contents-title {
+     position: relative;
+ }
+ .contents1  .sub-title {
+     position: absolute;
+     top: 0;
+     left: 1.5%;
+     font-size: 4.2rem;
+     font-weight: bold;
+     margin-bottom: 18px; 
+     color: #1A1311;
+ }
+ .contents1  .title-decoration {
+     width: 44px;
+     padding-top: 44px;
+     background: url(../img/decoration.png) no-repeat;
+ }
+ .contents1  .sub-title-explain {
+     width: 100%;
+     font-size: 2.2rem;
+     margin-top: 41px;
+     color: #303030;
+ }
+ @media (max-width: 960px){
+   .sub-top > .sub-top-title  {
+       font-size: 4rem;
+       font-weight: bold;
+       margin-bottom: 48px;
+       color: #137989; 
+   }
+   .sub-top > .sub-top-title-explain {
+       font-size: 1.6rem;
+       color: #333333;
+       margin-bottom: 30px;
+   }
+   .sub-top > .sub-top-visual {
+      position: relative; 
+      width: 1364px;
+      height: 422px;
+      margin-bottom: 90px;
+      background: url(../img/temp--img1.jpg);
+      background-size: cover; 
+   }
+   .sub-top  .visual-title-wrap {
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+       text-align: center;   
+   }
+   .sub-top  .visual-title-wrap > .visual-title {
+       font-size: 3.2rem;
+       font-weight: bold;
+       color: #fff;
+       margin-bottom: 6px;
+   }
+   .sub-top  .visual-title-wrap > .visual-explain {
+       font-size: 1.6rem;
+       color: #fff;     
+   }
+   /* ------------------------contents---------------------- */
+   .contents1 {
+       width: 1364px;
+       height: auto;
+       margin: 0 auto;
+   }
+   .contents1 .sub-contents-title {
+       position: relative;
+   }
+   .contents1  .sub-title {
+       position: absolute;
+       top: 0;
+       left: 1.5%;
+       font-size: 2.8rem;
+       font-weight: bold;
+       margin-bottom: 18px; 
+       color: #1A1311;
+   }
+   .contents1  .title-decoration {
+       width: 44px;
+       padding-top: 44px;
+       background: url(../img/decoration.png) no-repeat;
+   }
+   .contents1  .sub-title-explain {
+       width: 100%;
+       font-size: 1.6rem;
+       margin-top: 41px;
+       color: #303030;
+   }
+
+ }
