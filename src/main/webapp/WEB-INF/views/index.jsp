@@ -17,7 +17,7 @@
 </head>
 <body>
   <div class="header">
-    <div class="header-logo">
+    <div class="header-logo" id="headerLogo">
     </div>
     <div class="header-menu">
       <div class="gnb">
@@ -29,11 +29,11 @@
         </div>
       </div>
       <div class="gnb">
-        <div class="mainmenu"><a href="">입주박람회</a>
+        <div class="mainmenu"><a>입주박람회</a>
           <ul class="submenu">
             <li class="display-none"><a href="">입주박람회</a></li>
             <li><a href="">주관이력</a></li>
-            <li><a href="">박람회 사진</a></li>
+            <li><a id="fairPicture">박람회 사진</a></li>
           </ul>
         </div>
       </div>
@@ -45,9 +45,9 @@
         </div>
       </div>
       <div class="gnb">
-        <div class="mainmenu"><a href="">문의하기</a>
+        <div class="mainmenu"><a>문의하기</a>
           <ul class="submenu">
-            <li><a href="">협력업체문의</a></li>
+            <li><a id="partnerInquiry" href="/partner/list" >협력업체문의</a></li>
             <li><a href="">입주박람회문의</a></li>
             <li><a href="/asBoard/as">A/S접수</a></li>
           </ul>
@@ -502,5 +502,8 @@ cooperativeBtn.addEventListener('click',()=>{
       });
   
   </script>
+  
+<script type="text/javascript" src="../api_js/common.js"></script>
+
 </body>
 </html>
