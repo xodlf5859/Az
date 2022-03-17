@@ -30,9 +30,9 @@ public class Criteria {
     public void setPerPageNum(int pageCount) {
         int cnt = this.perPageNum;
         if(pageCount != cnt) {
-            this.perPageNum = cnt;
-        } else {
             this.perPageNum = pageCount;
+        } else {
+        	this.perPageNum = cnt;
         }
     }
 

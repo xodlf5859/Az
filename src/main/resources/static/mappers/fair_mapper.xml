@@ -19,6 +19,12 @@
 			 *
 		from board
 		where board_type = 'fair'
+		order by board_idx desc
+		limit #{cri.pageStart}, #{cri.perPageNum}
+	</select>
+	
+	<select id="countFair" parameterType="Integer" resultType="Integer">
+		select count(*) from board where board_type = 'fair'
 	</select>
 	
 	<!-- 박람회게시글등록  -->

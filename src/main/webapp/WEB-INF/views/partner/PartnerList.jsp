@@ -85,8 +85,27 @@
           <button class="b-state" id="answerBtn"><img src="/img/b-check.png">답변완료</button>
           <button class="b-write" id="writeBtn"><img src="/img/b-write.png">글쓰기</button>
         </div>
-<!--         <ul class="borad-bottom-02"> -->
-<!--           <li><a href="#" class="first">처음</a></li> -->
+        
+    <ul class="borad-bottom-02">
+    <C:if test="${pageMaker.prev }">
+    <li>
+        <a href='/partner/list?page=${pageMaker.startPage-1 }' class="prev" >이전</a>
+        
+    </li>
+    </C:if>
+    <C:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="pageNum">
+    <li>
+        <a class="num" href='/partner/list?page=${pageNum }'>${pageNum }</a>
+    </li>
+    </C:forEach>
+    <C:if test="${pageMaker.next && pageMaker.endPage >0 }">
+    <li>
+        <a class="next" href='/partner/list?page=${pageMaker.endPage+1 }'>다음</a>
+    </li>
+    </C:if>
+
+
+        
 	</ul>
 
 

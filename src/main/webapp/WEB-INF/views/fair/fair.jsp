@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,28 +112,41 @@
       <p class="sub-title-explain">아트젠의 입주박람회 현장을 보여드리겠습니다.</p>
     </div>
   </div>
+  
   <div class="fair">
+  <c:forEach items="${fairList }" var="list">
     <div class="fair-wrap">
       <div class="fair-img"></div>
       <div class="fair-info">
-        <div class="fair-title"><a href="">${fairList[0].boardTitle}</a></div>
-        <div class="fair-date"><a href="">${fairList[0].boardRegdate }</a></div>
+        <div class="fair-title"><a href="">${list.boardTitle}</a></div>
+        <div class="fair-date"><a href="">${list.boardRegdate }</a></div>
       </div>
     </div>
+  </c:forEach>
+  </div>
+    
   <div class="form-button">
     <button>글쓰기</button>
   </div>
-  <ul class="borad-bottom-02">
-    <li><a href="#" class="first">처음</a></li>
-    <li><a href="#" class="prev">이전</a></li>
-    <li><a href="#" class="num active">1</a></li>
-    <li><a href="#" class="num">2</a></li>
-    <li class="display-none"><a href="#" class="num">3</a></li>
-    <li class="display-none"><a href="#" class="num">4</a></li>
-    <li class="display-none"><a href="#" class="num">5</a></li>
-    <li><a href="#" class="next">다음</a></li>
-    <li><a href="#" class="last">마지막</a></li>
-  </ul>
+        <ul class="borad-bottom-02">
+    <c:if test="${pageMaker.prev }">
+    <li>
+        <a href='/fair/list?page=${pageMaker.startPage-1 }' class="prev" >이전</a>
+        
+    </li>
+    </c:if>
+    <c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="pageNum">
+    <li>
+        <a class="num" href='/fair/list?page=${pageNum }'>${pageNum }</a>
+    </li>
+    </c:forEach>
+    <c:if test="${pageMaker.next && pageMaker.endPage >0 }">
+    <li>
+        <a class="next" href='/fair/list?page=${pageMaker.endPage+1 }'>다음</a>
+    </li>
+    </c:if>
+        
+	</ul>
   <div class="footer">
     <div class="footer-top">
       <div class="logo"></div>
@@ -151,7 +165,7 @@
   </div>
   
   
-  <script type="text/javascript" src="../api_js/common.js"></script>
+<!--   <script type="text/javascript" src="../api_js/common.js"></script> -->
   
 </body>
 </html>

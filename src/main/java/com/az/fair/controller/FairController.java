@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.az.common.Criteria;
+import com.az.common.PageMaker;
 import com.az.fair.service.FairService;
 import com.az.fair.vo.FairVO;
 import com.az.file.service.FileService;
@@ -40,13 +42,22 @@ public class FairController {
 	
 	//조회 
 	@GetMapping("/list")
-	public ModelAndView selectFair(FairVO fairVO, ModelAndView mnv) throws Exception{
+	public ModelAndView selectFair(FairVO fairVO, ModelAndView mnv,Criteria cri) throws Exception{
 		
 		mnv.setViewName("fair/Fair");
+
+		cri.setPerPageNum(9);
+		System.out.println(cri.getPerPageNum());
+		PageMaker pageMaker = new PageMaker();
+	    pageMaker.setCri(cri);
+	    pageMaker.setTotalCount(fairService.countFair());
+	    
 		
-		List<FairVO> fairList = fairService.selectFair(fairVO);
+		
+		List<FairVO> fairList = fairService.selectFair(fairVO,cri);
 		
 		mnv.addObject("fairList", fairList);
+		mnv.addObject("pageMaker", pageMaker);
 		
 		return mnv;
 	}
