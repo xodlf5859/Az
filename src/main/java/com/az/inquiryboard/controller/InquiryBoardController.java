@@ -23,14 +23,14 @@ public class InquiryBoardController {
 	private final String MODULE = "inquiry";
 	
 	//리스트
-	@GetMapping("/list.do")
+	@GetMapping("/list")
 	public String list(Model model) {
 		model.addAttribute("list", service.list());
 		return MODULE + "/list";
 	}
 	
 	//상세보기
-	@GetMapping("/view.do")
+	@GetMapping("/view")
 	public String view(int inquiry_idx, Model model) {
 		
 		InquiryVO vo = service.view(inquiry_idx);
@@ -43,13 +43,13 @@ public class InquiryBoardController {
 	}
 	
 	// 등록 폼
-	@GetMapping("/write.do")
+	@GetMapping("/write")
 	public String writeForm() {
 		return MODULE + "/write";
 	}
 	
 	// 등록 처리
-	@PostMapping("write.do")
+	@PostMapping("write")
 	public String write(InquiryVO vo, HttpServletRequest request, RedirectAttributes rttr) throws Exception {
 		
 		// DB에 저장
@@ -57,11 +57,11 @@ public class InquiryBoardController {
 		// 처리 결과 메시지 저장
 		rttr.addFlashAttribute("msg", "게시글이 등록 되었습니다.");
 		
-		return "redirect:list.do";
+		return "redirect:list";
 	}
 	
 	// 수정 폼
-	@GetMapping("update.do")
+	@GetMapping("update")
 	public String updateForm(int inquiry_idx, Model model) {
 		
 		model.addAttribute("vo", service.view(inquiry_idx));
@@ -70,12 +70,12 @@ public class InquiryBoardController {
 	}
 	
 	// 수정 처리
-	@PostMapping("/update.do")
+	@PostMapping("/update")
 	public String update(InquiryVO vo, RedirectAttributes rttr) {
 		
 		service.update(vo);
 		rttr.addFlashAttribute("msg", "수정이 완료되었습니다.");
-		return "redirect:view.do?inquiry_idx=" + vo.getInquiry_idx();
+		return "redirect:view?inquiry_idx=" + vo.getInquiry_idx();
 	}
 	
 	

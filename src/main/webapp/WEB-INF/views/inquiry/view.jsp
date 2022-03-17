@@ -112,7 +112,7 @@
           <p class="sub-title">입주 박람회 문의</p>
           <p class="sub-title-explain">입주 박람회에 관한 궁금한 점을 문의하실 수 있습니다.</p>
         </div>
-        <form name="fwite" id="fwrite" action="update.do?inquiry_idx=${vo.inquiry_idx }" method="post">
+        <form name="fwite" id="fwrite" action="update?inquiry_idx=${vo.inquiry_idx }" method="post">
             <div class="form-write">
                 <div class="form-write-in">
                     <label><span class="star">*</span>이름</label>
@@ -138,7 +138,7 @@
             </div>
             <div class="form-button">
                 <div class="form-button-left">
-                  <a href="list.do" class="btn-cancle">목록</a>
+                  <a href="list" class="btn-cancle">목록</a>
                 </div>
                 <div class="form-button-right">
                   <button type="submit" id="btn_submit" class="btn-submit">삭제</button>

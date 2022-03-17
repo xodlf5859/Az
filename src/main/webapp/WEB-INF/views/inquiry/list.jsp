@@ -17,7 +17,7 @@
 		$(function(){
 			$(".dataRow").click(function(){
 				var no = $(this).find(".inquiry_idx").text();
-				location = "view.do?inquiry_idx=" + no;
+				location = "view?inquiry_idx=" + no;
 			});
 		});
 	</script>
@@ -135,7 +135,7 @@
             <ul class="cooperator-request-board">
             <c:forEach items="${list }" var="vo">
                 <li class="dataRow">
-                    <a href="view.do?inquiry_idx=${vo.inquiry_idx }">
+                    <a href="view?inquiry_idx=${vo.inquiry_idx }">
                       <input type="checkbox" class="b-check-box">  
                      <p class="b-number">${vo.inquiry_idx }</p>   
                      <div class="b-title-wrap">
@@ -165,7 +165,7 @@
         </div>
         <div class="borad-bottom-01">
           <button class="b-state"><img src="/img/b-check.png">답변완료</button>
-          <button onclick="location.href='/inquiry/write.do'" class="b-write"><img src="/img/b-write.png">글쓰기</button>
+          <button onclick="location.href='/inquiry/write'" class="b-write"><img src="/img/b-write.png">글쓰기</button>
         </div>
 <!--         <ul class="borad-bottom-02"> -->
 <!--           <li><a href="#" class="first">처음</a></li> -->

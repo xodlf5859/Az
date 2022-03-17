@@ -1,6 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -8,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(주)아트젠</title>
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/common2.css">
     <link rel="stylesheet" href="../css/header_footer.css">
-    <link rel="stylesheet" href="../css/as-form.css">
+    <link rel="stylesheet" href="../css/cooperator-request-board.css">
 </head>
 <body>
-  <!-- 입주 박람회 폼 페이지 -->
+  <!-- 협력업체신청 게시판 -->
   <div class="header">
     <div class="header-logo">
     </div>
@@ -95,52 +92,77 @@
           </div>
       </div>
       <div class="sub-top">
-        <h1 class="sub-top-title">입주 박람회 문의</h1>
-        <p class="sub-top-title-explain">입주 박람회에 관한 궁금한 점을 문의하실 수 있습니다.</p>  
+        <h1 class="sub-top-title">협력업체 신청</h1>
+        <p class="sub-top-title-explain">아트젠과 함께 하는 BEST PARTNERSHIP</p>  
         <div class="sub-top-visual">
           <div class="visual-title-wrap">
-            <p class="visual-title">입주 박람회 문의</p>
-            <p class="visual-explain">언제나 아트젠을 사랑해 주셔서 감사합니다. 최대한 빠르게 답변해 드릴 수 있도록 노력 하겠습니다.</p>
+            <p class="visual-title">협력업체신청</p>
+            <p class="visual-explain">아트젠은 상생과 협력의 가치를 믿고 실천합니다.</p>
           </div>
         </div>
       </div> 
       <div class="contents1">
         <div class="sub-contents-title">
           <div class="title-decoration"></div>
-          <p class="sub-title">입주 박람회 문의</p>
-          <p class="sub-title-explain">입주 박람회에 관한 궁금한 점을 문의하실 수 있습니다.</p>
+          <p class="sub-title">협력업체 신청</p>
+          <p class="sub-title-explain">아트젠과 함께하는 BEST PARTNERSHIP</p>
         </div>
-        <form name="fwite" id="fwrite" action="update" method="post">
-            <div class="form-write">
-                <div class="form-write-in">
-                    <label><span class="star">*</span>이름</label>
-                    <input type="text" id="inquiry_name" name="inquiry_name">
-                </div>
-                <div class="form-write-in">
-                    <label><span class="star">*</span>비밀번호</label>
-                    <input type="password" id="inquiry_pw" name="inquiry_pw">
-                </div>
-                <div class="form-write-in">
-                  <label>이메일</label>
-                  <input type="text" id="inquiry_email" name="inquiry_email">
-                </div>
-                <div class="form-write-in">
-                  <label>연락처</label>
-                  <input type="text" id="inquiry_phone" name="inquiry_phone">
-                </div>
-                <div class="form-write-in-100">
-                  <label class="title-label"><span class="star">*</span>제목</label>
-                  <input type="text" id="inquiry_title" name="inquiry_title">
-                </div>
-                <textarea class="form-write-in-100-text" id="inquiry_content" name="inquiry_content"></textarea>
-            </div>
-            <div class="form-button">
-              <a href="#" class="btn-cancle">취소</a>
-              <button type="submit" id="btn_submit" class="btn-submit">수정완료</button>
-            </div>
-        </form>
+        <div class="c-r-b-wrap">
+            <ol>
+                <li>
+                  <input type="checkbox" class="b-check-box">
+                </li>
+                <li>번호</li>
+                <li>제목</li>
+                <li>글쓴이</li>
+                <li>날짜</li>
+                <li>조회수</li>
+            </ol>
+            <ul class="cooperator-request-board">
+                <li>
+                    <a href="#">
+                      <input type="checkbox" class="b-check-box">  
+                     <p class="b-number">22</p>   
+                     <div class="b-title-wrap">
+                       <p class="b-title">테스트입니다.adfadfadfad fadf adf ad ad</p>
+                      <div class="b-complete">답변 대기중</div>
+                     </div>
+                     <p class="b-writer">이노베이션티</p> 
+                     <p class="b-date">2022. 03. 02</p>  
+                     <p class="b-view">32</p>
+                    </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <input type="checkbox" class="b-check-box">  
+                   <p class="b-number">22</p>   
+                   <div class="b-title-wrap">
+                     <p class="b-title">테스트입니다.adfadfadfad fadffadfadfad fadf adf ad afadfadfad fadf adf ad afadfadfad fadf adf ad afadfadfad fadf adf ad afadfadfad fadf adf ad a adf ad ad테스트입니다.adfadfadfad fadf adf ad ad adfadfad fadf adf ad 끝!</p>
+                    <div class="b-incomplete">답변 완료</div>
+                   </div>
+                   <p class="b-writer">가나다라마바사자dddddd</p> 
+                   <p class="b-date">2022. 03. 02</p>  
+                   <p class="b-view">32</p>
+                  </a>
+              </li>
+            </ul>
+        </div>
+        <div class="borad-bottom-01">
+          <button class="b-state"><img src="/img/b-check.png">답변완료</button>
+          <button class="b-write"><img src="/img/b-write.png">글쓰기</button>
+        </div>
+        <ul class="borad-bottom-02">
+          <li><a href="#" class="first">처음</a></li>
+          <li><a href="#" class="prev">이전</a></li>
+          <li><a href="#" class="num">1</a></li>
+          <li><a href="#" class="num">2</a></li>
+          <li><a href="#" class="next">다음</a></li>
+          <li><a href="#" class="last">마지막</a></li>
       </div>
-   <div class="footer">
+      <button class="mobile-viewmore">
+        더보기
+      </button>
+      <div class="footer">
         <div class="footer-top">
           <div class="logo"></div>
           <div>
