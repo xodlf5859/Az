@@ -17,6 +17,9 @@ public interface FairMapper {
 	//총 글 갯수 확인
 	int countFair() throws Exception;
 	
+	//상세보기
+	FairVO detailFair(FairVO fairVO) throws Exception;
+	
 	//등록
 	void insertFair(FairVO fairVO) throws Exception;
 	

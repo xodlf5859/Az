@@ -118,15 +118,15 @@
     <div class="fair-wrap">
       <div class="fair-img"></div>
       <div class="fair-info">
-        <div class="fair-title"><a href="">${list.boardTitle}</a></div>
-        <div class="fair-date"><a href="">${list.boardRegdate }</a></div>
+        <div class="fair-title"><a href="/fair/list/${list.boardIdx }">${list.boardTitle}</a></div>
+        <div class="fair-date"><a href="/fair/list/${list.boardIdx }">${list.boardRegdate }</a></div>
       </div>
     </div>
   </c:forEach>
   </div>
     
   <div class="form-button">
-    <button>글쓰기</button>
+    <button id="registBtn">글쓰기</button>
   </div>
         <ul class="borad-bottom-02">
     <c:if test="${pageMaker.prev }">
@@ -165,6 +165,7 @@
   </div>
   
   
+  <script type="text/javascript" src="../api_js/fair/fairList.js"></script>
 <!--   <script type="text/javascript" src="../api_js/common.js"></script> -->
   
 </body>

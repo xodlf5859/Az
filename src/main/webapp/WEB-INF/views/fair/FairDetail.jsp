@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +10,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>(주)아트젠</title>
   <script defer src="../js/m-menu.js"></script>
-  <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/header_footer.css">
-  <link rel="stylesheet" href="../css/fair.css">
+  <link rel="stylesheet" href="<%=request.getContextPath() %>/css/common.css">
+  <link rel="stylesheet" href="<%=request.getContextPath() %>/css/header_footer.css">
+  <link rel="stylesheet" href="<%=request.getContextPath() %>/css/fair.css">
 </head>
 <body>
   <div class="header">
@@ -95,9 +97,8 @@
     </div>
   </div>
   <div class="sub-top">
-      <h1 class="sub-top-title">입주박람회</h1>
-      <p class="sub-top-title-explain">아트젠의 입주박람회를 소개합니다.</p>
- 
+    <h1 class="sub-top-title">입주박람회</h1>
+    <p class="sub-top-title-explain">아트젠의 입주박람회를 소개합니다.</p>  
     <div class="sub-top-visual">
       <div class="visual-title-wrap">
         <p class="visual-title">입주박람회</p>
@@ -112,61 +113,35 @@
       <p class="sub-title-explain">아트젠의 입주박람회 현장을 보여드리겠습니다.</p>
     </div>
   </div>
-  <div class="fair-post">
-    <div>글쓰기</div>
-    <div class="post-wrap">
-      <div class="contents">
-        <div class="title">
-          <span>*</span>
-          <p>제목</p>
-        </div>
-<!--         <form action="list" method="post" enctype="multipart/form-data"> -->
-        <input type="text" id="boardTitle">
-      </div>
-      <div class="contents">
-        <div class="title">
-          <span>*</span>
-          <p>이미지 등록하기</p>
-        </div>
-          <input type="file" name="" id="fairImgUpload" multiple accept="image/png, image/jpeg, image/jpg , image/gif">
 
-        <div class="img-file-wrap">
-          <div class="file-name">
-            <div>파일명</div>
-            <ul class="file-list" id="lili" >
-              <!-- 파일 추가 시 li 자체 복붙 -->
-              <li id="addli">
-                <button class="delete-btn" id="deleteBtn"></button>
-                <div id="fileName"></div>
-              </li>
-            </ul>
-          </div>
-          <div class="file-size">
-            <div>용량</div>
-            <ul class="file-list">
-              <!-- 파일 추가 시 li 자체 복붙 -->
-              <li>
-                <div id="fileSize"></div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="contents ">
-        <div class="title">
-          <span>*</span>
-          <p>내용</p>
-        </div>
-        <textarea name="" id="boardContent" style="width: 1392px; height: 400px;" rows="20"></textarea>
-      </div>
-      <div class="form-button">
-        <button id="btn_cancel" class="btn_cancel">취소하기</a>
-        <button type="submit" id="btn_submit" class="btn-submit">등록하기</button>
+  <div class="fair-read">
+    <div class="post-title">
+      <div>제목</div>
+      <div>${fairVO.boardTitle}</div>
     </div>
+    <div class="post-contents">
+      <div class="img-wrap">
+        <img src="../img/main-slider-02.png">
+        <img src="../img/main-slider-01.png">
+      </div>
+      <div>${fairVO.boardContent }</div>
     </div>
-<!--         </form > -->
+    <div class="post-btn-wrap">
+      <div>
+        <a href="">이전</a>
+        <a href="">목록</a>
+        <a href="">다음</a>
+      </div>
+      <div class="admin-btn-wrap">
+        <form action="">
+          <button>삭제</button>
+          <button>수정</button>
+        </form>
+      </div>
+    </div>
   </div>
+
+
   <div class="footer">
     <div class="footer-top">
       <div class="logo"></div>
@@ -183,8 +158,5 @@
       <div>Copyright ⓒ 2022 ARTZEN All Rights Reserved.</div>
     </div>
   </div>
-  
-      <script type="text/javascript" src="../api_js/fair/fairRegist.js"></script>
-  
 </body>
 </html>

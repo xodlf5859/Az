@@ -30,13 +30,15 @@ public class FairServiceImpl implements FairService {
 
 	@Override
 	public void updateFair(FairVO fairVO) throws Exception {
-		// TODO Auto-generated method stub
 		
 	}
 	@Override
 	public int countFair() throws Exception {
-		// TODO Auto-generated method stub
 		return fairMapper.countFair();
+	}
+	@Override
+	public FairVO detailFair(FairVO fairVO) throws Exception {
+		return fairMapper.detailFair(fairVO);
 	}
 
 	

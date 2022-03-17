@@ -37,6 +37,14 @@
 	<update id="updateFair"  parameterType="com.az.fair.vo.FairVO" >
 	update board set board_title = #{boardTitle}, board_content = #{boardContent} where board_idx = #{boardIdx}
 	</update>
+	
+	<!-- 상세보기  -->
+	<select id="detailFair" parameterType="com.az.fair.vo.FairVO" resultMap="fair">
+		select *
+		from 
+		board 
+		where board_idx = #{boardIdx}
+	</select>
 
 
 <!--   <update id="deleteMember"  parameterType="com.az.board.vo.BoardVO" > -->

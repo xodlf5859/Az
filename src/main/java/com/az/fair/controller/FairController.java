@@ -2,6 +2,7 @@ package com.az.fair.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.List;
 import java.util.UUID;
 
@@ -9,11 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -47,7 +49,6 @@ public class FairController {
 		mnv.setViewName("fair/Fair");
 
 		cri.setPerPageNum(9);
-		System.out.println(cri.getPerPageNum());
 		PageMaker pageMaker = new PageMaker();
 	    pageMaker.setCri(cri);
 	    pageMaker.setTotalCount(fairService.countFair());
@@ -122,9 +123,33 @@ public class FairController {
 			fairService.insertFair(fairVO);
 		}
 		
-		
-		
 		return "fair/Fair";
 	}
+	
+	//상세보기
+	@GetMapping("/list/{boardIdx}")
+	public ModelAndView detailFair(FairVO fairVO, ModelAndView mnv,@PathVariable int boardIdx) throws Exception{
+		
+		fairVO = fairService.detailFair(fairVO);
+		
+		//엔터 했을때 한칸 띄어쓰기
+		fairVO.setBoardContent(fairVO.getBoardContent().replace("\r\n", "<br>"));
+		
+		mnv.setViewName("fair/FairDetail");
+		mnv.addObject("fairVO",fairVO);
+		
+		return mnv;
+	}
+	
+	//이미지 띄우기 하는중
+	@GetMapping("/image/{fileName}")
+	@ResponseBody
+	public Resource imageView(@PathVariable String fileName) throws MalformedURLException{
+		
+		
+		return new UrlResource(fileName);
+	}
+	
+	
 	
 }
