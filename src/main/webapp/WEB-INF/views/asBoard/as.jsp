@@ -129,8 +129,10 @@
             <ul class="cooperator-request-board">
             	<c:forEach var="var" items="${asList}" varStatus="status">
                 <li>
-                    <a href="/asBoard/detail/${var.asIdx}">
-                      <input type="checkbox" class="b-check-box" name="asIdx" id="${var.asIdx}" value="${var.asIdx}">  
+<%--                     <a href="/asBoard/detail/${var.asIdx}"> --%>
+                    <a href="/asBoard/securityC/${var.asIdx}">
+                      <input type="checkbox" class="b-check-box" name="asIdx" id="${var.asIdx}" value="${var.asIdx}">
+                      <input type="text" name="${var.asIdx}" value="${var.asIdx}" style="display: none;">  
                      <p class="b-number">${status.count}</p>   
                      <div class="b-title-wrap">
                        <p class="b-title" id="comple">${var.asTitle}</p>

@@ -24,6 +24,11 @@ public interface AsBoardService {
 
 	List<AsBoardVO> listCriteria(Criteria cri);
 
+	void asCount(AsBoardVO asBoardVo);
+
+
+	List<AsBoardVO> realPass(AsBoardVO asBoardVo);
+
 
 
 

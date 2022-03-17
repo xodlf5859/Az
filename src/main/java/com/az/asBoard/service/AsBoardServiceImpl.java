@@ -57,6 +57,16 @@ public class AsBoardServiceImpl implements AsBoardService {
 		return asBoardDAO.listCriteria(cri);
 	}
 
+	@Override
+	public void asCount(AsBoardVO asBoardVo) {
+		asBoardDAO.asCount(asBoardVo);
+	}
+
+	@Override
+	public List<AsBoardVO> realPass(AsBoardVO asBoardVo) {
+		return asBoardDAO.realPass(asBoardVo);
+	}
+
 
 	
 	
