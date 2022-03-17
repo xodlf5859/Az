@@ -1,0 +1,456 @@
+/* * {border: 1px solid red;} */
+html {
+    font-size: 62.5%;
+    line-height: 1.285;
+  }
+body {
+    font-size: 1.6rem;
+}  
+input:focus {
+    outline: none;
+}  
+/* ---------------------------sub top 타이틀---------------------- */
+.sub-top {
+ width: 1364px;  
+ margin: 0 auto; 
+ /* height: 140px; */
+ margin-top: 91px;
+}
+.sub-top > .sub-top-title  {
+    font-size: 6rem;
+    font-weight: bold;
+    margin-bottom: 48px;
+    color: #137989; 
+}
+.sub-top > .sub-top-title-explain {
+    font-size: 2.4rem;
+    color: #333333;
+    margin-bottom: 60px;
+}
+.sub-top > .sub-top-visual {
+   position: relative; 
+   width: 1364px;
+   height: 422px;
+   margin-bottom: 152px;
+   background: url(../img/temp--img1.jpg);
+   background-size: cover; 
+}
+.sub-top  .visual-title-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;   
+}
+.sub-top  .visual-title-wrap > .visual-title {
+    font-size: 4.2rem;
+    font-weight: bold;
+    color: #fff;
+}
+.sub-top  .visual-title-wrap > .visual-explain {
+    font-size: 2rem;
+    color: #fff;     
+}
+/* ------------------------contents---------------------- */
+.contents1 {
+    width: 1364px;
+    height: auto;
+    margin: 0 auto;
+}
+.contents1 .sub-contents-title {
+    position: relative;
+    text-align: center;
+}
+.sub-contents-title-wrap {
+    display: flex;
+    justify-content: center;
+}
+.contents1  .sub-title {
+    left: 11%;
+    font-size: 4.2rem;
+    font-weight: bold;
+    margin-left: 6%;
+    color: #1A1311;
+}
+.contents1  .title-decoration {
+    position: absolute;
+    top: 0;
+    left: 11%;
+    z-index: -1;
+    width: 44px;
+    padding-top: 44px;
+    background: url(../img/decoration.png) no-repeat;
+}
+.contents1  .sub-title-explain {
+    width: 100%;
+    font-size: 2.2rem;
+    color: #303030;
+    margin-bottom: 60px;
+    margin-top: 20px;
+}
+/* .test {
+    position: relative;
+    top: 45px;
+    opacity: 0.3;
+} */
+/*----------------------품목별 리스트-----------------  */
+.contents1 .filter-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 110px;
+}
+/* .contents1 .filter-list > li {
+    width: 11%;
+    padding: 1% 0;
+    border-radius: 398px 398px 0 398px;
+    border: 1px solid #137989;
+    color: #137989;
+    text-align: center;
+    white-space: nowrap;
+    margin-left: 20px;
+    margin-bottom: 23px;
+    transition: 0.2s; 
+} */
+.filter-list  li {
+   width: 11%;
+}
+.filter-list > li >  input {
+    display: none;
+}
+/* -------아이템들 간격 조절------------- */
+.contents1 .filter-list > li:first-child{
+    margin-left: 0;
+}
+
+.contents1 .filter-list > li:nth-child(8) {
+    margin-right: 0;
+}
+.contents1 .filter-list > li:nth-child(9) {
+    margin-left: 94px;
+}
+.contents1 .filter-list > li:nth-child(15) {
+    margin-right: 94px;
+}
+.contents1 .filter-list > li:nth-child(16) {
+    margin-left: 94px;
+}
+.contents1 .filter-list > li:last-child {
+    margin-right: 94px;
+}
+.contents1 .filter-list > li:nth-child(n+16):nth-child(-n+22) {
+   margin-bottom: 0;
+}
+/* -------------라벨 디자인-------------- */
+.filter-list > li >  input + label {
+    display: block;
+    padding: 6% 0%;
+    border-radius: 398px 398px 0 398px;
+    border: 1px solid #137989;
+    color: #137989;
+    text-align: center;
+    white-space: nowrap;
+    margin-left: 20px;
+    margin-bottom: 23px;
+    transition: 0.2s;
+}
+
+.filter-list input + label:hover, 
+.filter-list input:checked + label {
+    background: #137989;
+    color: #fff;
+}
+.contents1 .filter-list label {
+    cursor: pointer;
+}
+
+
+
+/* ---------------------회사 리스트 부분------------------------ */
+.contents1 > .filter-company {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 110px;
+}
+.contents1 > .filter-company > li {
+    width: 24%;
+    height: 0;
+    padding: 5% 0 14%;
+    margin-bottom: 50px;
+    border: 1px solid #707070;
+}
+
+
+.filter-company > li > .company-logo {
+    width: 100%;
+    padding: 11.5% 0;
+    background-image: url(../img/test-samsung-logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-bottom: 25px;
+
+}
+.filter-company > li > .company-name {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    font-size: 16px;
+    color: #1A1311;
+    text-align: center;
+    padding: 2%;
+}
+
+/* --------------버튼------------- */
+.button-wrap {
+    position: relative;
+    margin-bottom: 165px;
+}
+.button-wrap .company-view-more {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: none;
+}
+.company-register {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #137989;
+    padding: 1.3% 0;
+    border: 1px solid #137989;
+    border-radius: 398px 398px 0 398px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.company-register:hover,
+.company-register:active {
+    background-color: #137989;
+    color: #fff;
+}
+
+
+
+
+
+
+
+/* ------------------------반응형----------------------------- */
+@media (max-width: 960px) {
+    body {
+        overflow-x: hidden;
+    }
+    .sub-top {
+        width: 100%;
+    }
+    .sub-top .sub-top-visual {
+        width: 100%;
+    }
+    .sub-top .visual-title-wrap > .visual-title {
+        width: 100%;
+    
+    }
+    .sub-top .visual-title-wrap {
+        width: 100%;
+    }
+    .sub-top .visual-title-wrap > .visual-explain {
+        width: 100%;
+    }
+    .contents1 {
+        width: 100%;
+    }
+    /* ---------품목 정렬------------ */
+    .contents1 .filter-list > li {
+        width: 12%;
+    }
+    .filter-list > li >  input + label {
+        margin-left: 10px;
+        font-size: 1.4rem; 
+    }
+
+    
+    .contents1 .filter-list > li:nth-child(9) {
+        margin-left: 30px;
+    }
+    .contents1 .filter-list > li:nth-child(15) {
+        margin-right: 30px;
+    }
+    .contents1 .filter-list > li:nth-child(16) {
+        margin-left: 30px;
+    }
+    .contents1 .filter-list > li:last-child {
+        margin-right: 30px;
+    }
+    
+}
+@media (max-width: 940px) {
+    /* --------------품목정렬 반응형---------- */
+    .contents1 .filter-list {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        overflow-x: scroll;
+        margin-bottom: 110px;
+    }
+    .contents1 .filter-list > li:nth-child(8) {
+        margin-right: 0px;
+    }
+    .contents1 .filter-list > li:nth-child(9) {
+        margin-left: 0px;
+    }
+    .contents1 .filter-list > li:nth-child(15) {
+        margin-right: 0px;
+    }
+    .contents1 .filter-list > li:nth-child(16) {
+        margin-left: 0px;
+    }
+    .contents1 .filter-list > li:last-child {
+        margin-right: 0px;
+    }
+    .contents1 .filter-list > li:nth-child(n+16):nth-child(-n+22) {
+        margin-bottom: 23px;
+     }
+    .contents1 .filter-list > li {
+        width: auto;
+    }
+    .filter-list > li >  input + label {
+        margin-right: 10px;
+        padding: 10px 26px;
+    }
+    .contents1 .filter-list input {
+        display: none;
+    }
+    
+
+  
+    /* -----------------회사정렬------------------ */
+    .contents1 > .filter-company > li {
+        width: 49%;
+        padding: 5% 0 22%;
+    }
+    .filter-company > li > .company-name {
+        margin-top: 5%;
+    }
+    .filter-company > li > .company-logo {
+        margin-bottom: 0;
+    }
+    .button-wrap {
+        padding: 3%;
+    }
+    .button-wrap .company-view-more {
+        display: block;
+    }
+    .company-register {
+        display: none;
+    }
+
+    
+    
+}
+
+@media (max-width: 360px) {
+    body {
+        overflow-x: hidden;
+    }
+    /* ------------visual-title-wrap 추가------------ */
+    .visual-title-wrap {  
+        padding: 0 16px;
+
+    }
+    .sub-top > .sub-top-title {
+        width: 100%;
+        font-size: 39px;
+        margin-bottom: 29px;
+        padding-left: 32px;
+        padding-right: 32px;
+    } 
+    .sub-top > .sub-top-title-explain {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    .contents1 .sub-contents-title {
+        width: 100%;
+        text-align: left;
+        /* margin-bottom: 30px; */
+    }
+    .sub-top .sub-top-title-explain {
+        font-size: 15px;
+    }
+    .sub-top > .sub-top-visual {
+        height: 270px;
+        margin-bottom: 120px;
+    }
+    .contents1  .title-decoration {
+        top: 0;
+        left: 0;
+        background-size: cover;
+        width: 30px;
+        padding-top: 30px;
+    }
+    .sub-top .visual-title-wrap > .visual-title {
+        font-size: 3.2rem;
+        margin-bottom: 5px;  
+    
+    }
+    .sub-top .visual-title-wrap > .visual-explain {
+        font-size: 1.6rem;
+        font-weight: normal;
+        margin-bottom: 30px;
+    }
+    .contents1 {
+        padding: 0 32px;
+    }
+    .contents1 .sub-title  {
+        font-size:2.8rem;
+        margin-bottom: 9px;
+    }
+    .contents1 .sub-title-explain {
+        font-size: 1.6rem;
+    }
+    /* ------------필터반응형----------------------------------- */
+    .contents1 .filter-list {
+        margin-bottom: 40px;
+    }
+    .contents1 .sub-title-explain {
+        margin-bottom: 40px;
+    }
+    .contents1 > .filter-company {
+        margin-bottom: 20px;
+    }
+    .filter-company > li  {
+        margin-bottom: 0;
+    }
+    .filter-company > li > .company-name {
+        font-size: 1.3rem;
+    }
+    .company-register {
+        display: none;
+    }
+    /* --------------더보기 버튼---------------------------- */
+    .button-wrap .company-view-more {
+        width: 100%;
+        padding: 2% 0;
+        font-size: 1.5rem;
+    }
+
+}
+@media (max-width: 280px) {
+    .contents1 {
+        padding: 0 16px;
+    }
+    .sub-top > .sub-top-title,
+    .sub-top .sub-top-title-explain {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .sub-top .visual-title-wrap > .visual-explain {
+        width: 75%;
+        margin: 0 auto;
+    }
+}

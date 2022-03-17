@@ -1,3 +1,6 @@
+input{
+  display: none;
+}
 /* 메인 비주얼 */
 .visual{
   width: 100%;

@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/common2.css">
     <link rel="stylesheet" href="../css/header_footer.css">
     <link rel="stylesheet" href="../css/cooperator-request-board.css">
 </head>

@@ -9,12 +9,48 @@ body {
 input:focus {
   outline: none;
 }  
-
+/* 필터 박스 */
+.history-filter{
+  width: 100%;
+  padding: 0 278px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-y: auto;
+  margin-top: 30px;
+}
+.history-filter .filter-btn{
+  margin-right: 30px;
+}
+.history-filter input{
+  display: none;
+}
+.history-filter input + label{
+  width: 102px;
+  line-height: 42px;
+  display: block;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #137989;
+  border-radius: 398px 398px 0px 398px;
+  text-align: center;
+  font: normal normal medium 16px/15px Noto Sans KR;
+  color: #137989;
+}
+.history-filter input:checked + label{
+  width: 102px;
+  line-height: 42px;
+  display: block;
+  background: #137989 0% 0% no-repeat padding-box;
+  border: 1px solid #137989;
+  border-radius: 398px 398px 0px 398px;
+  text-align: center;
+  font: normal normal medium 16px/15px Noto Sans KR;
+  color: #fff;
+}
 /* 입주박람회 현장 레이아웃 */
 .fair{
   /* padding: 0 27.8rem; */
-  /* width: 1364px;
-  margin: 0 auto; */
   width: 100%;
   padding: 0 278px;
   margin-top: 6rem;
@@ -27,52 +63,54 @@ input:focus {
   width: 20vw;
   height: 478px;
   margin-bottom: 8rem;
-  overflow: hidden;
   /* margin-left: 50px; */
+  overflow: hidden;
+
 }
 .fair .fair-wrap .fair-img{
   width: 100%;
   height: 300px;
   transition: all 0.3s;
+
 }
 .fair .fair-wrap .fair-img:hover{
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 .fair .fair-wrap:nth-child(1) .fair-img{
-  background: transparent url('../img/fair-img-01.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/apt-01.png') 0% 0% no-repeat padding-box;
   background-size: cover;
 }
 .fair .fair-wrap:nth-child(2) .fair-img{
-  background: transparent url('../img/fair-img-02.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/apt-02.png') 0% 0% no-repeat padding-box;
   background-size: cover;
 }
 .fair .fair-wrap:nth-child(3) .fair-img{
-  background: transparent url('../img/fair-img-03.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/apt-03.png') 0% 0% no-repeat padding-box;
   background-size: cover;
 }
 .fair .fair-wrap:nth-child(4) .fair-img{
-  background: transparent url('../img/fair-img-04.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/apt-04.png') 0% 0% no-repeat padding-box;
   background-size: cover;
 }
 .fair .fair-wrap:nth-child(5) .fair-img{
-  background: transparent url('../img/fair-img-05.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/apt-05.png') 0% 0% no-repeat padding-box;
   background-size: cover;
 }
 .fair .fair-wrap:nth-child(6) .fair-img{
-  background: transparent url('../img/fair-img-06.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/apt-06.png') 0% 0% no-repeat padding-box;
   background-size: cover;
 }
 .fair .fair-wrap:nth-child(7) .fair-img{
-  background: transparent url('../img/fair-img-07.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/apt-07.png') 0% 0% no-repeat padding-box;
   background-size: cover;
 }
 .fair .fair-wrap:nth-child(8) .fair-img{
-  background: transparent url('../img/fair-img-08.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/apt-08.png') 0% 0% no-repeat padding-box;
   background-size: cover;
 
 }
 .fair .fair-wrap:nth-child(9) .fair-img{
-  background: transparent url('../img/main-slider-04.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/apt-09.png') 0% 0% no-repeat padding-box;
   background-size: cover;
 }
 
@@ -87,15 +125,20 @@ input:focus {
   text-overflow: ellipsis; 
   overflow: hidden;
   -webkit-line-clamp: 2;
+  position: relative;
+}
+.fair .fair-wrap .fair-info .fair-year{
+  color: #137989;
+  font-weight: bold;
 }
 .fair .fair-wrap .fair-info .fair-title{
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 .fair .fair-wrap .fair-info .fair-title a{
   width: 100%;
   display: inline-block;
-  font: normal normal bold 22px/33px Noto Sans KR;
-  color: #137989;
+  font: normal normal bold 20px/30px Noto Sans KR;
+  color: #303030;
   display: -webkit-box; 
   -webkit-box-orient: vertical; 
   word-wrap: break-word; 
@@ -108,8 +151,10 @@ input:focus {
   color: #137989;
 }
 .fair .fair-wrap .fair-info .fair-date a{
-  font: normal normal normal 20px/33px Noto Sans KR;
+  font: normal normal normal 16px/16px Noto Sans KR;
   color: #303030;
+  position: absolute;
+  bottom: 30px;
 }
 
 /* 글쓰기 버튼 */
@@ -177,8 +222,9 @@ input:focus {
 
 /* 글쓰기 누르면 나오는 창 */
 .fair-post{
-  width: 1364px;
-  margin: 30px auto;
+  width: 100%;
+  padding: 0 278px;
+  margin: 30px 0 100px 0;
   margin-bottom: 100px;
 }
 .fair-post .post-wrap .contents .title{
@@ -189,8 +235,21 @@ input:focus {
 .fair-post .post-wrap .contents .title span{
   color: red;
 }
+.fair-post .post-wrap .apt-info{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 .fair-post .post-wrap .contents input[type=text]{
-  width: 80%;
+  width: 520px;
+  height: 50px;
+  border: 1px solid #BABABA;
+  background-color: #F7F7F7;
+  margin: 4px 0;
+  margin-right: 20px;
+}
+.fair-post .post-wrap .contents input[type=number]{
+  width: 520px;
   height: 50px;
   border: 1px solid #BABABA;
   background-color: #F7F7F7;
@@ -287,8 +346,9 @@ input:focus {
 
 /* 글읽기 상세 */
 .fair-read{
-  width: 1364px;
-  margin: 30px auto;
+  width: 100%;
+  padding: 0 278px;
+  margin: 30px 0;
 }
 .fair-read .post-title{
   width: 100%;
@@ -379,6 +439,9 @@ input:focus {
   cursor: pointer;
 }
 @media (max-width: 960px){
+  .history-filter{
+    padding: 0 32px;
+  }
   .fair{
     padding: 0 32px;
     width: 100%;
@@ -397,7 +460,8 @@ input:focus {
     margin-bottom: 0rem;
   }
   .fair .fair-wrap .fair-info .fair-title a{
-    font-size: 1.6rem;
+    font: normal normal bold 1.6rem/2.4rem Noto Sans KR;
+
    }
    .fair .fair-wrap .fair-info .fair-date a{
     font-size: 1.6rem;
@@ -406,7 +470,7 @@ input:focus {
     width: 100%;
     height: 150px;
     background: #F7F7F7 0% 0% no-repeat padding-box;
-    padding: 10px 20px;
+    padding: 20px;
   }
   /* 글읽기 상세 */
 .fair-read{
@@ -463,6 +527,36 @@ input:focus {
 }
 .fair-read .admin-btn-wrap{
   display: none;
+}
+.fair-post{
+  width: 100%;
+  padding: 0 32px;
+  margin: 30px 0 100px 0;
+  margin-bottom: 100px;
+}
+.fair-post .post-wrap .contents input[type=text]{
+  width: 80vw;
+  height: 50px;
+  border: 1px solid #BABABA;
+  background-color: #F7F7F7;
+  margin: 4px 0;
+  margin-right: 20px;
+}
+.fair-post .post-wrap .contents input[type=number]{
+  width: 80vw;
+  height: 50px;
+  border: 1px solid #BABABA;
+  background-color: #F7F7F7;
+  margin: 4px 0;
+}
+.fair-post .post-wrap .contents input[type=file]{
+  margin: 4px 0;
+}
+.fair-post .post-wrap .apt-info{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
 }
 }
 @media (max-width: 280px){
@@ -632,6 +726,7 @@ font-size: 1.5rem;
 }
 }
 
+
 .m-viewmore{
   padding: 0 32px;
 }
@@ -656,4 +751,25 @@ font-size: 1.5rem;
 .borad-bottom-02{
   display: none;
 }
+}
+
+/* 주관이력 글쓰기 */
+
+.fair-post select{
+  width: 303px;
+  height: 50px;
+  font-size: 16px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #BABABA;
+  padding: 0 10px;
+}
+@media (max-width:960px){
+  .fair-post select{
+    width: 80vw;
+    height: 50px;
+    font-size: 16px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #BABABA;
+    padding: 0 10px;
+  }
 }

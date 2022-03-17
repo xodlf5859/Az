@@ -4,7 +4,7 @@
 <%--     <jsp:include page="/WEB-INF/views/asBoard/as.jsp" /> --%>
     
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -413,6 +413,8 @@ cooperativeBtn.addEventListener('click',()=>{
       },
       });
   
+  
+
   </script>
   
 <script type="text/javascript" src="../api_js/common.js"></script>

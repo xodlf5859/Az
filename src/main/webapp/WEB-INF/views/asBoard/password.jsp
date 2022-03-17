@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(주)아트젠</title>
-    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/common2.css">
     <link rel="stylesheet" href="/css/header_footer.css">
     <link rel="stylesheet" href="/css/cooperator-request-read-password.css">
 </head>

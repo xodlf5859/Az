@@ -11,5 +11,11 @@ public class IntroduceController {
 	public String CompanyIntroduce() throws Exception{
 		return "introduce/CompanyIntroduce";
 	}
+	
+	@RequestMapping("/social")
+	public String social() throws Exception{
+		return "introduce/social";
+	}
+	
 
 }
