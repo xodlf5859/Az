@@ -4,11 +4,13 @@
 <html lang="ko">
 <head>
     <link rel="stylesheet" href="../css/cooperator-request-read-password.css">
+    <link rel="stylesheet" href="../css/header_footer.css">
+    
 </head>
 <body>
     <!-- 협력업체 신청 글을 읽었을 때 비밀번호 입력 페이지입니다 -->
   <div class="header">
-    <div class="header-logo">
+    <div class="header-logo" id="headerLogo">
     </div>
           </div>
       </div>
@@ -65,6 +67,7 @@
       </div>
 
     <script type="text/javascript" src="../api_js/apply/applyCheck.js"></script>
+<script type="text/javascript" src="../api_js/common.js"></script>
 
 </body>
 </html>

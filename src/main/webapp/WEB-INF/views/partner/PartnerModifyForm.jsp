@@ -14,7 +14,7 @@
 <body>
   <!-- 협력업체 신청폼 페이지 -->
   <div class="header">
-    <div class="header-logo">
+    <div class="header-logo"  id="headerLogo">
     </div>
     <div class="header-menu">
       <div class="gnb">
@@ -204,5 +204,7 @@
 
 
     <script type="text/javascript" src="../api_js/apply/applyModify.js"></script>
+    <script type="text/javascript" src="../api_js/common.js"></script>
+    
 </body>
 </html>

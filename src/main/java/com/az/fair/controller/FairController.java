@@ -1,5 +1,6 @@
 package com.az.fair.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -43,14 +44,27 @@ public class FairController {
 		return "fair/FairRegist";
 	}
 	
+//	@PostMapping("/list")
+//	@ResponseBody
+//	public void insertFair(	@RequestParam("uploadFile") MultipartFile[] uploadFile, Model model) throws Exception{
+//		
+//		
+//		System.out.println(uploadFile);
+//		
+//		
+////		fairService.insertFair(fairVO);
+//	}
+	
 	@PostMapping("/list")
-	@ResponseBody
-	public void insertFair(	@RequestParam("uploadFile") MultipartFile[] uploadFile, Model model) throws Exception{
+	public String saveFile(
+//			@RequestParam("boardTitle") String boardTitle,
+//							@RequestParam("boardContent") String boardContent,
+							@RequestParam MultipartFile file,
+							HttpServletRequest req) throws IOException{
 		
+		System.out.println(file);
 		
-		System.out.println(uploadFile);
-		
-		
-//		fairService.insertFair(fairVO);
+		return "fair/Fair";
 	}
+	
 }

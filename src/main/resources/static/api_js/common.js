@@ -3,7 +3,7 @@
  */
 
 //let partnerBtn = document.getElementById("partnerInquiry");
-//let headerLogo = document.getElementById("headerLogo");
+let headerLogo = document.getElementById("headerLogo");
 //let fairPicture = document.getElementById("fairPicture");
 //
 //
@@ -11,10 +11,10 @@
 //
 //
 //
-////로고 클릭
-//headerLogo.addEventListener('click',()=>{
-//	location.href="../";
-//})
+//로고 클릭
+headerLogo.addEventListener('click',()=>{
+	location.href="../";
+})
 ////박람회 사진 메뉴 클릭
 //fairPicture.addEventListener('click',()=>{
 //	location.href="fair/list";
