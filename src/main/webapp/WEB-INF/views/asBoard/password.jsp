@@ -16,86 +16,8 @@
 </head>
 <body>
     <!-- as 신청 글을 클릭했을 때 비밀번호 입력 페이지입니다 -->
-  <div class="header">
-    <div class="header-logo">
-    </div>
-    <div class="header-menu">
-      <div class="gnb">
-        <div class="mainmenu"><a href="">회사소개</a>
-          <ul class="submenu">
-            <li><a href="">회사소개</a></li>
-            <li><a href="">사회공헌</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="gnb">
-        <div class="mainmenu"><a href="">입주박람회</a>
-          <ul class="submenu">
-            <li class="display-none"><a href="">입주박람회</a></li>
-            <li><a href="">주관이력</a></li>
-            <li><a href="">박람회 사진</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="gnb">
-        <div class="mainmenu"><a href="">협력업체</a>
-          <ul class="submenu">
-            <li><a href="">협력사 조회</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="gnb">
-        <div class="mainmenu"><a href="">문의하기</a>
-          <ul class="submenu">
-            <li><a href="">협력업체문의</a></li>
-            <li><a href="">입주박람회문의</a></li>
-            <li><a href="">A/S접수</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-    <div class="m-menu">
-      <div class="m-menu-btn">
-        <button class="menubutton"></button>
-      </div>
-    </div>
-  </div>
-      <div class="m-menu">
-          <div class="m-menu-open">
-              <div class="header">
-              <div class="header-logo">
-              </div>
-                  <div class="m-menu-close">
-                  <button class="menubutton"></button>
-                  </div>
-              </div>
-              <div class="m-gnb">
-              <button class="accordion m-mainmenu">회사소개</button>
-              <div class="panel m-submenu">
-                  <div><a href="">· 회사소개</a></div>
-                  <div><a href="">· 사회공헌</a></div>
-              </div>
-              <button class="accordion m-mainmenu">주관이력</button>
-              <div class="panel m-submenu">
-                  <div><a href="">· 입주박람회</a></div>
-                  <div><a href="">· 주관이력</a></div>
-                  <div><a href="">· 박람회 사진</a></div>
-              </div>
-              <button class="accordion m-mainmenu">협력사조회</button>
-              <div class="panel m-submenu">
-                  <div><a href="">· 협력사 조회</a></div>
-              </div>
-              <button class="accordion m-mainmenu">문의하기</button>
-              <div class="panel m-submenu">
-                  <div><a href="">· 협력업체문의</a></div>
-                  <div><a href="">· 입주박람회문의</a></div>
-                  <div><a href="">· A/S접수</a></div>
-              </div>
-              </div>
-              <div class="m-back"><img src="../img/m-menu-background.png" alt=""></div>
-          </div>
-      </div>
+           <jsp:include page="/WEB-INF/views/main/pageMenu.jsp" />
+     
       <div class="sub-top">
         <h1 class="sub-top-title">AS 접수센터</h1>
         <p class="sub-top-title-explain">하자보수 접수 센터입니다. 최대한 빠르게 답변해드리겠습니다.</p>  
@@ -134,9 +56,7 @@
             </div>
         </form>
       </div>
-    <div class="footer">
-      footer
-    </div>
+   <jsp:include page="/WEB-INF/views/main/footer.jsp" />
     <script type="text/javascript">
     	
     	var realPass = document.getElementById("pass").value;

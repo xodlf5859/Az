@@ -3,17 +3,16 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <link rel="stylesheet" href="../css/cooperator-request-read-password.css">
-    <link rel="stylesheet" href="../css/header_footer.css">
-    
+    <link rel="stylesheet" href="/css/cooperator-request-read-password.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/header_footer.css">
 </head>
 <body>
     <!-- 협력업체 신청 글을 읽었을 때 비밀번호 입력 페이지입니다 -->
-  <div class="header">
-    <div class="header-logo" id="headerLogo">
-    </div>
-          </div>
-      </div>
+ 
+ 
+    <jsp:include page="/WEB-INF/views/main/pageMenu.jsp" />
+ 
       <div class="sub-top">
         <h1 class="sub-top-title">협력업체 신청</h1>
         <p class="sub-top-title-explain">아트젠과 함께 하는 BEST PARTNERSHIP</p>  
@@ -49,25 +48,8 @@
             </div>
 <!--         </form> -->
       </div>
-<div class="footer">
-        <div class="footer-top">
-          <div class="logo"></div>
-          <div>
-            <a href="">개인정보처리방침</a>
-            <a href="">이용약관</a>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <div>
-            <div>(34161)  대전광역시 유성구 복용북로 33번길 1  TEL : 042-825-6490</div>
-            <div>대표 이도엽  사업자등록번호 193-88-01901</div>
-          </div>
-          <div>Copyright ⓒ 2022 ARTZEN All Rights Reserved.</div>
-        </div>
-      </div>
-
+ <jsp:include page="/WEB-INF/views/main/footer.jsp" />
     <script type="text/javascript" src="../api_js/apply/applyCheck.js"></script>
-<script type="text/javascript" src="../api_js/common.js"></script>
 
 </body>
 </html>

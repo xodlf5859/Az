@@ -110,7 +110,7 @@
           <p class="sub-title">입주 박람회 문의</p>
           <p class="sub-title-explain">입주 박람회에 관한 궁금한 점을 문의하실 수 있습니다.</p>
         </div>
-        <form name="fwite" id="fwrite" action="write.do" method="post">
+        <form name="fwite" id="fwrite" action="write" method="post">
             <div class="form-write">
                 <div class="form-write-in">
                     <label><span class="star">*</span>이름</label>
@@ -135,7 +135,7 @@
                 <textarea class="form-write-in-100-text" id="inquiry_content" name="inquiry_content"></textarea>
             </div>
             <div class="form-button">
-              <a href="list.do" class="btn-cancle">취소</a>
+              <a href="list" class="btn-cancle">취소</a>
               <button type="submit" id="btn_submit" class="btn-submit">작성완료</button>
             </div>
         </form>

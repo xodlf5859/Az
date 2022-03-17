@@ -1,5 +1,7 @@
 package com.az.asBoard.vo;
 
+import java.util.Date;
+
 public class AsBoardVO {
 	
 
@@ -13,14 +15,28 @@ public class AsBoardVO {
 	private String asPhone;
 	private String asItem;
 	private String asStore;
-	private String asDate;
+	private Date asDate;
+//	private String asDate;
 	private String asTitle;
 	private String asContent;
 	private String asStatus;
+	private String asCount;
 	
 	
 	
 	
+	public Date getAsDate() {
+		return asDate;
+	}
+	public void setAsDate(Date asDate) {
+		this.asDate = asDate;
+	}
+	public String getAsCount() {
+		return asCount;
+	}
+	public void setAsCount(String asCount) {
+		this.asCount = asCount;
+	}
 	public String getAsStatus() {
 		return asStatus;
 	}
@@ -74,12 +90,6 @@ public class AsBoardVO {
 	}
 	public void setAsStore(String asStore) {
 		this.asStore = asStore;
-	}
-	public String getAsDate() {
-		return asDate;
-	}
-	public void setAsDate(String asDate) {
-		this.asDate = asDate;
 	}
 	public String getAsTitle() {
 		return asTitle;

@@ -16,6 +16,7 @@
 		<result property="asTitle" column="as_title"/>
 		<result property="asContent" column="as_content"/>
 		<result property="asStatus" column="as_status"/>
+		<result property="asCount" column="as_count"/>
 	</resultMap>
 	
 <!-- 	게시글 검색	//게시판보기 -->
@@ -35,6 +36,7 @@
 		from
 		    asboard
 		where as_read = 'Y'
+		order by as_idx desc
 		limit #{pageStart}, #{perPageNum}
 		]]>
 </select>
