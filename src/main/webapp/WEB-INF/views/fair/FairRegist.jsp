@@ -120,7 +120,7 @@
           <span>*</span>
           <p>제목</p>
         </div>
-        <form action="list" method="post" enctype="multipart/form-data">
+<!--         <form action="list" method="post" enctype="multipart/form-data"> -->
         <input type="text" id="boardTitle">
       </div>
       <div class="contents">
@@ -165,8 +165,8 @@
         <button type="submit" id="btn_submit" class="btn-submit">등록하기</button>
     </div>
     </div>
+<!--         </form > -->
   </div>
-        </form>
   <div class="footer">
     <div class="footer-top">
       <div class="logo"></div>

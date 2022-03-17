@@ -2,11 +2,12 @@
  * 
  */
 
-let data = {};
+let formData = new FormData();
 
 //지원폼 양식
 let boardTitle = document.getElementById("boardTitle");
 let boardContent = document.getElementById("boardContent");
+let inputFile = document.getElementById("fairImgUpload");
 
 let cancleBtn = document.getElementById("btn_cancel");
 let submitBtn = document.getElementById("btn_submit");
@@ -34,24 +35,35 @@ submitBtn.addEventListener('click', () => {
 	}
 
 	if (starCheck == true) {
-		data.boardTitle = boardTitle.value;
-		data.boardContent = boardContent.value;
-		insert(data);
+		formData.append('boardTitle' , boardTitle.value);
+		formData.append('boardContent' , boardContent.value);
+		
+		
+		console.log(inputFile.files.length);
+		console.log(boardContent.value);
+		console.log(boardTitle.value);
+		
+		
+		for(let i=0;i<inputFile.files.length;i++){
+			formData.append('file',inputFile.files[i]);
+			
+		}
+		
+		insert(formData);
 
 	}
 
 });
 
 
-let insert = async (data) => {
+let insert = async (formData) => {
 	let rqResult = await fetch('http://localhost:8080/fair/list', {
 		method: "POST",
 		headers: {
-			'Content-Type': 'application/json;charset=utf-8'
+			'Content-Type': 'application/x-www-form-urlencoded'
 		},
-		body: JSON.stringify(
-			data
-		)
+		body: formData
+		
 	})
 	if (rqResult.ok == true) {
 		alert("등록 성공했습니다.");
